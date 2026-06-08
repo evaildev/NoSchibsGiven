@@ -1,0 +1,9 @@
+{
+  "name": "schibsted-cookie-popup-blocker",
+  "version": "2.0.0",
+  "description": "Blocks Schibsted/SourcePoint cookie consent popups across all major browsers",
+  "private": true,
+  "scripts": {
+    "build": "bash build.sh"
+  }
+}
