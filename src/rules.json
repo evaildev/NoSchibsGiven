@@ -181,5 +181,93 @@
       ],
       "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }
+  },
+  {
+    "id": 20,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "pulse.schibsted.media",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 21,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "log.medieretall.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 22,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "cognifront.mvt.forbruker.schibsted.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 23,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "session-service.payment.schibsted.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 24,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "confirmit.com",
+      "initiatorDomains": [
+        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
+        "aftonbladet.se", "omni.se", "hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 25,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "log.medier24.no",
+      "initiatorDomains": [
+        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
+        "aftonbladet.se", "omni.se", "hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 26,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "ads.skm.microsoft.com",
+      "initiatorDomains": [
+        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
+        "aftonbladet.se", "omni.se", "hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 27,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "fbevents-a.akamaihd.net",
+      "initiatorDomains": [
+        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
+        "aftonbladet.se", "omni.se", "hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
   }
 ]

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "NoSchibsGiven",
-  "version": "2.1",
+  "version": "2.1.1",
   "description": "Blokkerer Schibsted sin betalte samtykke-popup og all client-side sporing på Schibsted Media-sider.",
   "browser_specific_settings": {
     "gecko": {
@@ -30,7 +30,15 @@
     "*://log.mediafall.no/*",
     "*://*.datadoghq-browser-agent.com/*",
     "*://*.adnxs-simple.com/*",
-    "*://adsdkprod.azureedge.net/*"
+    "*://adsdkprod.azureedge.net/*",
+    "*://pulse.schibsted.media/*",
+    "*://log.medieretall.no/*",
+    "*://cognifront.mvt.forbruker.schibsted.no/*",
+    "*://session-service.payment.schibsted.no/*",
+    "*://*.confirmit.com/*",
+    "*://log.medier24.no/*",
+    "*://ads.skm.microsoft.com/*",
+    "*://fbevents-a.akamaihd.net/*"
   ],
   "declarative_net_request": {
     "rule_resources": [
