@@ -107,10 +107,22 @@ Safari støtter dessverre ikke direkte installasjon av utvidelser fra ZIP-filer 
 
 Utvidelsen bruker to lag med beskyttelse:
 
-1. **Nettverksblokkering** — Blokkerer SourcePoint sine servere (`cdn.privacy-mgmt.com`) på nettverksnivå. Popup-scriptet laster aldri inn.
-2. **DOM-cleanup** — Et backup-script fjerner eventuelle gjenværende elementer automatisk når siden lastes.
+1. **Nettverksblokkering** — Blokkerer på nettverksnivå:
+   - SourcePoint sine servere (`cdn.privacy-mgmt.com`) — popup-scriptet laster aldri inn
+   - Schibsted sitt eget CMP (`cmp.tek.no`, `cmp.vg.no`, osv.)
+   - Schibsted tracking og analytics (`sdk.pulse.schibsted.com`, `log.mediafall.no`, `static.privacy.schibsted.com`, `ads.inventory.schibsted.io`)
+   - Tredjeparts annonsenettverk (AppNexus, Datadog, Azure ad SDK) — **kun** på Schibsted Media-sider
+2. **DOM-cleanup** — Et backup-script fjerner eventuelle gjenværende samtykke-elementer automatisk når siden lastes.
 
-Fungerer på **alle** nettsider som bruker SourcePoint som CMP — ikke bare Schibsted.
+SourcePoint-blokkeringen fungerer på **alle** nettsider som bruker SourcePoint som CMP. Schibsted-spesifikk tracking-blokkering gjelder Schibsted Media-sider (tek.no, vg.no, bt.no, ba.no, e24.no, aftenposten.no, aftonbladet.se, omni.se, hbl.fi).
+
+### Hva utvidelsen ikke blokkerer
+
+- Serverside logging (HTTP access logs, CDN-logger)
+- Tracking på andre nettsider enn Schibsted Media
+- finn.no (egen plattform, ikke dekket)
+
+Fant du et nytt tracking-domene? Åpne en [Issue](../../issues) så legger vi det til.
 
 ---
 

@@ -1,14 +1,30 @@
 {
   "manifest_version": 3,
-  "name": "Schibsted Cookie Popup Blocker",
-  "version": "2.0",
-  "description": "Blocks Schibsted/SourcePoint cookie consent popups. Works on all SourcePoint-based sites.",
+  "name": "NoSchibsGiven",
+  "version": "2.1",
+  "description": "Blokkerer Schibsted sin betalte samtykke-popup og all client-side sporing på Schibsted Media-sider.",
   "permissions": [
     "declarativeNetRequest"
   ],
   "host_permissions": [
     "*://*.privacy-mgmt.com/*",
-    "*://*.sourcepoint.com/*"
+    "*://*.sourcepoint.com/*",
+    "*://cmp.tek.no/*",
+    "*://cmp.vg.no/*",
+    "*://cmp.bt.no/*",
+    "*://cmp.ba.no/*",
+    "*://cmp.e24.no/*",
+    "*://cmp.aftenposten.no/*",
+    "*://cmp.aftonbladet.se/*",
+    "*://cmp.omni.se/*",
+    "*://cmp.hbl.fi/*",
+    "*://sdk.pulse.schibsted.com/*",
+    "*://static.privacy.schibsted.com/*",
+    "*://ads.inventory.schibsted.io/*",
+    "*://log.mediafall.no/*",
+    "*://*.datadoghq-browser-agent.com/*",
+    "*://*.adnxs-simple.com/*",
+    "*://adsdkprod.azureedge.net/*"
   ],
   "declarative_net_request": {
     "rule_resources": [

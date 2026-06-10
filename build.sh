@@ -21,7 +21,7 @@ build_chromium() {
   cp "$SRC/manifest.chromium.json"  "$OUT/manifest.json"
   cp "$SRC/icons/"*                 "$OUT/icons/"
 
-  ZIP="$DIST/schibsted-blocker-chromium-v${VERSION}.zip"
+  ZIP="$DIST/noschibsgiven-chromium-v${VERSION}.zip"
   (cd "$DIST" && zip -r "../$ZIP" "build-chromium/" > /dev/null)
   mv "$ZIP" "$DIST/"
   rm -rf "$OUT"
@@ -37,7 +37,7 @@ build_firefox() {
   cp "$SRC/manifest.firefox.json"  "$OUT/manifest.json"
   cp "$SRC/icons/"*                "$OUT/icons/"
 
-  ZIP="$DIST/schibsted-blocker-firefox-v${VERSION}.zip"
+  ZIP="$DIST/noschibsgiven-firefox-v${VERSION}.zip"
   (cd "$OUT" && zip -r "../../$ZIP" . > /dev/null)
   rm -rf "$OUT"
   echo "✅  Firefox: $ZIP"

@@ -5,7 +5,7 @@
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "cdn.privacy-mgmt.com",
-      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "other"]
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }
   },
   {
@@ -14,7 +14,7 @@
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "sourcepoint.com",
-      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "other"]
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }
   },
   {
@@ -23,7 +23,163 @@
     "action": { "type": "block" },
     "condition": {
       "urlFilter": "privacy-mgmt.com",
-      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "other"]
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "cmp.tek.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 5,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "cmp.vg.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 6,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "cmp.bt.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 7,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "cmp.ba.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 8,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "cmp.e24.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 9,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "cmp.aftenposten.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 10,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "cmp.aftonbladet.se",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 11,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "cmp.omni.se",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 12,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "cmp.hbl.fi",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 13,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "sdk.pulse.schibsted.com",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 14,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "static.privacy.schibsted.com",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 15,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "ads.inventory.schibsted.io",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 16,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "log.mediafall.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 17,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "datadoghq-browser-agent.com",
+      "initiatorDomains": [
+        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
+        "aftonbladet.se", "omni.se", "hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 18,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "adnxs-simple.com",
+      "initiatorDomains": [
+        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
+        "aftonbladet.se", "omni.se", "hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 19,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "adsdkprod.azureedge.net",
+      "initiatorDomains": [
+        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
+        "aftonbladet.se", "omni.se", "hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }
   }
 ]

@@ -1,6 +1,6 @@
-// Schibsted Cookie Popup Blocker
-// Strategi 1: SourcePoint-scriptet blokkeres på nettverksnivå (rules.json)
-// Strategi 2: DOM-cleanup som backup dersom SP laster fra annen URL
+// NoSchibsGiven
+// Strategi 1: SourcePoint og Schibsted-tracking blokkeres på nettverksnivå (rules.json)
+// Strategi 2: DOM-cleanup som backup dersom samtykke-UI laster fra annen URL
 
 (function () {
   // Injiser CSS umiddelbart — før DOM er ferdig
