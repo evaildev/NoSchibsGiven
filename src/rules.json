@@ -150,8 +150,10 @@
     "condition": {
       "urlFilter": "datadoghq-browser-agent.com",
       "initiatorDomains": [
-        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
-        "aftonbladet.se", "omni.se", "hbl.fi"
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
       ],
       "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }
@@ -163,8 +165,10 @@
     "condition": {
       "urlFilter": "adnxs-simple.com",
       "initiatorDomains": [
-        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
-        "aftonbladet.se", "omni.se", "hbl.fi"
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
       ],
       "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }
@@ -176,8 +180,10 @@
     "condition": {
       "urlFilter": "adsdkprod.azureedge.net",
       "initiatorDomains": [
-        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
-        "aftonbladet.se", "omni.se", "hbl.fi"
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
       ],
       "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }
@@ -225,8 +231,10 @@
     "condition": {
       "urlFilter": "confirmit.com",
       "initiatorDomains": [
-        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
-        "aftonbladet.se", "omni.se", "hbl.fi"
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
       ],
       "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }
@@ -238,8 +246,10 @@
     "condition": {
       "urlFilter": "log.medier24.no",
       "initiatorDomains": [
-        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
-        "aftonbladet.se", "omni.se", "hbl.fi"
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
       ],
       "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }
@@ -251,8 +261,10 @@
     "condition": {
       "urlFilter": "ads.skm.microsoft.com",
       "initiatorDomains": [
-        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
-        "aftonbladet.se", "omni.se", "hbl.fi"
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
       ],
       "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }
@@ -264,8 +276,148 @@
     "condition": {
       "urlFilter": "fbevents-a.akamaihd.net",
       "initiatorDomains": [
-        "tek.no", "vg.no", "bt.no", "ba.no", "e24.no", "aftenposten.no",
-        "aftonbladet.se", "omni.se", "hbl.fi"
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 28,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "ads.inventory.schibsted.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 29,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "esv.schibsted.com",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 30,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "tag.medialab.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 31,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "log.insider.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 32,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "session-admin.payment.schibsted.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 33,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "vend.schibsted.ai",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 34,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "sentry.vgnett.no",
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 35,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "getPulseTracker",
+      "initiatorDomains": [
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 36,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "SchibstedDataCommon",
+      "initiatorDomains": [
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 37,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "initTracking",
+      "initiatorDomains": [
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 38,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "InitialiseAdverts",
+      "initiatorDomains": [
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
+      ],
+      "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
+    }
+  },
+  {
+    "id": 39,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "/consents",
+      "initiatorDomains": [
+        "tek.no", "www.tek.no", "vg.no", "www.vg.no", "assets.vg.no",
+        "bt.no", "www.bt.no", "ba.no", "www.ba.no", "e24.no", "www.e24.no",
+        "aftenposten.no", "www.aftenposten.no", "aftonbladet.se", "www.aftonbladet.se",
+        "omni.se", "www.omni.se", "hbl.fi", "www.hbl.fi"
       ],
       "resourceTypes": ["script", "sub_frame", "xmlhttprequest", "ping", "image", "other"]
     }

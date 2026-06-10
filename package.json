@@ -1,6 +1,6 @@
 {
   "name": "schibsted-cookie-popup-blocker",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Blokkerer Schibsted/SourcePoint samtykke-popups og client-side sporing på Schibsted Media-sider",
   "private": true,
   "scripts": {
