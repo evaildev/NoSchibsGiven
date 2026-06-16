@@ -60,15 +60,27 @@ function buildRules() {
 }
 
 function urlFilterToHostPermissions(filter) {
-  if (filter.startsWith('/')) {
+  // Sti- og scriptnavn-filtre (f.eks. /consents, getPulseTracker) treffer
+  // førsteparts-URL-er på Schibsted — dekket av initiator-domener.
+  if (filter.startsWith('/') || !filter.includes('.')) {
     return [];
   }
 
-  if (filter.includes('.')) {
-    return [`*://*${filter}/*`, `*://${filter}/*`];
+  // Kun ekte vertsnavn — ikke tilfeldige URL-strenger med punktum i seg.
+  const hostnameRe = /^[a-z0-9]([a-z0-9-]*\.)+[a-z]{2,}$/i;
+  if (!hostnameRe.test(filter)) {
+    return [];
   }
 
-  return [`*://*${filter}/*`];
+  const dotCount = (filter.match(/\./g) || []).length;
+
+  if (dotCount === 1) {
+    // domene.tld — tillat alle subdomener (f.eks. *.sourcepoint.com)
+    return [`*://*.${filter}/*`];
+  }
+
+  // Fullt vertsnavn (f.eks. cdn.privacy-mgmt.com, ads.inventory.schibsted.io)
+  return [`*://${filter}/*`];
 }
 
 function buildHostPermissions() {

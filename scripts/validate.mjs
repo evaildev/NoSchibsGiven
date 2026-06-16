@@ -18,6 +18,16 @@ const chromium = JSON.parse(readFileSync(join(SRC, 'manifest.chromium.json'), 'u
 const errors = [];
 const initiatorDomains = new Set();
 
+// Firefox/Chrome match pattern for host_permissions
+const HOST_PERM_RE =
+  /^(https?|wss?|file|ftp|\*):\/\/(\*|\*\.[^*/]+|[^*/]+)\/.*$/;
+
+for (const perm of chromium.host_permissions) {
+  if (!HOST_PERM_RE.test(perm)) {
+    errors.push(`ugyldig host_permission: ${perm}`);
+  }
+}
+
 for (const rule of rules) {
   if (rule.condition?.initiatorDomains) {
     for (const domain of rule.condition.initiatorDomains) {

@@ -1,6 +1,6 @@
 {
   "name": "noschibsgiven",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Blokkerer Schibsted/SourcePoint samtykke-popups og client-side sporing på Schibsted Media-sider",
   "private": true,
   "type": "module",
