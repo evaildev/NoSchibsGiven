@@ -99,7 +99,7 @@ Safari støtter dessverre ikke direkte installasjon av utvidelser fra ZIP-filer 
 
 **Alternativ for Mac-brukere:** Vi anbefaler å bruke [Chrome for Mac](https://www.google.com/chrome/) som er gratis og støtter enkel installasjon via stegene over.
 
-> Vil du bidra til å lage en offisiell Safari-versjon? Se [Contributing](#-bidra) nedenfor.
+> Vil du bidra til å lage en offisiell Safari-versjon? Se [Bidra](#-bidra) nedenfor.
 
 ---
 
@@ -112,17 +112,55 @@ Utvidelsen bruker to lag med beskyttelse:
    - Schibsted sitt eget CMP (`cmp.tek.no`, `cmp.vg.no`, osv.)
    - Schibsted tracking og analytics (`sdk.pulse.schibsted.com`, `log.mediafall.no`, `static.privacy.schibsted.com`, `ads.inventory.schibsted.io`)
    - Tredjeparts annonsenettverk (AppNexus, Datadog, Azure ad SDK) — **kun** på Schibsted Media-sider
-2. **DOM-cleanup** — Et backup-script fjerner eventuelle gjenværende samtykke-elementer automatisk når siden lastes.
+2. **DOM-cleanup** — Et backup-script fjerner eventuelle gjenværende samtykke-elementer automatisk når siden lastes. På Schibsted-sider ryddes også `localStorage`-nøkler som SourcePoint bruker til å huske samtykke.
 
-SourcePoint-blokkeringen fungerer på **alle** nettsider som bruker SourcePoint som CMP. Schibsted-spesifikk tracking-blokkering gjelder Schibsted Media-sider (tek.no, vg.no, bt.no, ba.no, e24.no, aftenposten.no, aftonbladet.se, omni.se, hbl.fi).
+SourcePoint-blokkeringen fungerer på **alle** nettsider som bruker SourcePoint som CMP. Schibsted-spesifikk tracking-blokkering gjelder Schibsted Media-sider:
+
+`tek.no` · `vg.no` · `bt.no` · `ba.no` · `e24.no` · `aftenposten.no` · `ap.no` · `aftonbladet.se` · `omni.se` · `hbl.fi` · `dn.no` · `godt.no` · `side2.no` · `vgd.no` · `svd.se`
 
 ### Hva utvidelsen ikke blokkerer
 
 - Serverside logging (HTTP access logs, CDN-logger)
 - Tracking på andre nettsider enn Schibsted Media
-- finn.no (egen plattform, ikke dekket)
+- **finn.no** (egen plattform, ikke dekket)
 
-Fant du et nytt tracking-domene? Åpne en [Issue](../../issues) så legger vi det til.
+### Kjente begrensninger
+
+- **Schibsted Plus / betaling:** Domener som `session-service.payment.schibsted.no` blokkeres fordi de brukes til sporing. Dette kan i noen tilfeller påvirke innloggings- eller betalingsflyt. Rapporter gjerne om du opplever problemer.
+- **Firefox:** Midlertidig installasjon krever manuell lasting ved hver oppstart (se installasjonssteg over).
+
+Fant du et nytt tracking-domene? Bruk [issue-malen for nye domener](../../issues/new?template=nytt-domene.md) eller åpne en vanlig [Issue](../../issues).
+
+---
+
+## 🛠️ Utvikling
+
+Krever [Node.js](https://nodejs.org/) 18+.
+
+```bash
+# Generer rules.json og manifest fra src/config.json
+npm run generate
+
+# Valider at regler og host_permissions er konsistente
+npm run validate
+
+# Bygg ZIP-pakker til dist/
+npm run build
+```
+
+**Filstruktur:**
+
+| Fil | Formål |
+|-----|--------|
+| `src/config.json` | Domener og blokkeringslister (én kilde) |
+| `src/content.js` | DOM-cleanup og scroll-opplåsing |
+| `scripts/generate.mjs` | Genererer `rules.json` og manifester |
+| `scripts/validate.mjs` | Sjekker konsistens før build |
+| `scripts/build.mjs` | Pakker Chromium- og Firefox-ZIP |
+
+For å legge til et nytt domene: oppdater `src/config.json`, kjør `npm run build`, og test på siden.
+
+Endringslogg: se [CHANGELOG.md](CHANGELOG.md).
 
 ---
 

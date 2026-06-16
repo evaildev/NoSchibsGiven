@@ -1,0 +1,35 @@
+name: Build og validering
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generer filer fra config
+        run: npm run generate
+
+      - name: Valider regler og manifest
+        run: npm run validate
+
+      - name: Bygg ZIP-pakker
+        run: npm run build
+
+      - name: Last opp artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: noschibsgiven-v${{ github.event.release.tag_name || 'snapshot' }}
+          path: dist/*.zip
+          if-no-files-found: error
