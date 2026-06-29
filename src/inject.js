@@ -20,7 +20,10 @@
       cmpId: 6,
       cmpVersion: 1,
       gdprApplies: true,
-      eventStatus: 'tcloaded',
+      // 'useractioncomplete' signaliserer at brukeren har tatt et aktivt valg
+      // (avslag). Spillere som JWPlayer venter ellers på denne statusen og
+      // starter først etter en timeout — derav forsinkelsen på noen sekunder.
+      eventStatus: 'useractioncomplete',
       cmpStatus: 'loaded',
       listenerId: listenerId,
       isServiceSpecific: true,
