@@ -7,12 +7,14 @@ Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 ## [Unreleased]
 
 ### Lagt til
+- TCF-stub (`src/inject.js`) som kjører i sidens MAIN-verden på Schibsted-domener og svarer på spillerens `__tcfapi`-spørringer med «GDPR gjelder, ingen samtykke gitt». Fikser at VGTV-videoer ikke kunne startes når CMP-en var blokkert ([#1](../../issues/1))
 - `LICENSE`-fil (MIT) — tidligere kun referert i README
 - CI attacher nå `dist/*.zip` automatisk til GitHub Release når en release publiseres
 
 ### Endret
 - `content.js` genereres nå fra `src/content.template.js` med domenelisten injisert fra `config.json` — `SCHIBSTED_ROOTS` kan ikke lenger komme ut av sync med config
-- Validering sjekker at `content.js` sin domeneliste matcher `config.json`
+- Validering sjekker at `content.js` sin domeneliste matcher `config.json`, og at TCF-stubben er registrert som en `world: "MAIN"`-content-script
+- Firefox `strict_min_version` hevet til `128.0` (kreves for `world: "MAIN"` i content scripts)
 
 ## [2.2.1] - 2026-06-16
 

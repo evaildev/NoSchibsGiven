@@ -20,7 +20,8 @@ Schibsted krever opptil 49 kr/md for å avvise annonsesporing. Datatilsynet og F
 > — Line Coll, direktør i Datatilsynet
 
 🔗 [Datatilsynet: Schibsted tek betalt for personvern](https://www.datatilsynet.no/aktuelt/aktuelle-nyheter-2026/schibsted-tek-betalt-for-personvern/) *(april 2026)*  
-🔗 [Forbrukerrådet klager inn Schibsted til Datatilsynet](https://rett24.no/articles/forbrukerradet-klager-schibsted-inn-til-datatilsynet-for-betaling-for-personvern) *(juni 2026)*
+🔗 [Forbrukerrådet klager inn Schibsted til Datatilsynet](https://rett24.no/articles/forbrukerradet-klager-schibsted-inn-til-datatilsynet-for-betaling-for-personvern) *(juni 2026)*  
+🔗 [Datatilsynet åpner tilsyn med Schibsted](https://www.digi.no/artikler/datatilsynet-apner-tilsyn-med-schibsted/573703) *(juni 2026)*
 
 ---
 
@@ -113,6 +114,7 @@ Utvidelsen bruker to lag med beskyttelse:
    - Schibsted tracking og analytics (`sdk.pulse.schibsted.com`, `log.mediafall.no`, `static.privacy.schibsted.com`, `ads.inventory.schibsted.io`)
    - Tredjeparts annonsenettverk (AppNexus, Datadog, Azure ad SDK) — **kun** på Schibsted Media-sider
 2. **DOM-cleanup** — Et backup-script fjerner eventuelle gjenværende samtykke-elementer automatisk når siden lastes. På Schibsted-sider ryddes også `localStorage`-nøkler som SourcePoint bruker til å huske samtykke.
+3. **TCF-stub** — På Schibsted-sider svarer utvidelsen på spillerens samtykke-spørringer (`__tcfapi`) med «GDPR gjelder, ingen samtykke gitt». Uten dette ville videospillere (f.eks. VGTV) henge fordi de venter på et svar fra den blokkerte CMP-en.
 
 SourcePoint-blokkeringen fungerer på **alle** nettsider som bruker SourcePoint som CMP. Schibsted-spesifikk tracking-blokkering gjelder Schibsted Media-sider:
 
@@ -155,6 +157,7 @@ npm run build
 | `src/config.json` | Domener og blokkeringslister (én kilde) |
 | `src/content.template.js` | Mal for DOM-cleanup — rediger denne |
 | `src/content.js` | **Generert** fra malen + config (ikke rediger direkte) |
+| `src/inject.js` | TCF-stub som kjører i sidens MAIN-verden (fikser videospillere) |
 | `scripts/generate.mjs` | Genererer `rules.json`, `content.js` og manifester |
 | `scripts/validate.mjs` | Sjekker konsistens før build |
 | `scripts/build.mjs` | Pakker Chromium- og Firefox-ZIP |

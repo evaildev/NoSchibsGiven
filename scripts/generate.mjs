@@ -119,6 +119,17 @@ function buildContentScriptMatches() {
   return [...matches].sort();
 }
 
+function buildSchibstedMatches() {
+  const matches = new Set();
+
+  for (const root of config.schibstedRoots) {
+    matches.add(`*://${root}/*`);
+    matches.add(`*://*.${root}/*`);
+  }
+
+  return [...matches].sort();
+}
+
 function buildContentScript() {
   const template = readFileSync(join(SRC, 'content.template.js'), 'utf8');
   // Hardkod domenelisten fra config.json så content.js aldri kommer ut av sync.
@@ -154,6 +165,16 @@ function buildManifest(browser) {
         run_at: 'document_start',
         all_frames: true,
       },
+      {
+        // TCF-stub i sidens MAIN-verden — lar videospillere (VGTV/JWPlayer)
+        // starte selv om SourcePoint-CMP er nettverksblokkert. Kun på
+        // Schibsted-domener for å ikke påvirke andre nettsteder.
+        matches: buildSchibstedMatches(),
+        js: ['inject.js'],
+        run_at: 'document_start',
+        all_frames: true,
+        world: 'MAIN',
+      },
     ],
     icons: {
       16: 'icons/icon16.png',
@@ -167,7 +188,8 @@ function buildManifest(browser) {
     base.browser_specific_settings = {
       gecko: {
         id: 'schibsted-blocker@local',
-        strict_min_version: '113.0',
+        // world: "MAIN" i content_scripts krever Firefox 128+.
+        strict_min_version: '128.0',
       },
     };
   }

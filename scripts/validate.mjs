@@ -86,6 +86,19 @@ if (chromium.version !== config.version) {
   errors.push(`manifest-versjon (${chromium.version}) matcher ikke config (${config.version})`);
 }
 
+// TCF-stubben må være registrert som en MAIN-world content script for at
+// videospillere skal kunne lese window.__tcfapi.
+const injectScript = (chromium.content_scripts || []).find(
+  (cs) => Array.isArray(cs.js) && cs.js.includes('inject.js')
+);
+if (!injectScript) {
+  errors.push('manifest mangler content script for inject.js (TCF-stub)');
+} else if (injectScript.world !== 'MAIN') {
+  errors.push('inject.js må kjøre i world: "MAIN" for å nå sidens __tcfapi');
+} else if (injectScript.run_at !== 'document_start') {
+  errors.push('inject.js bør kjøre på document_start (før sidens CMP-stub)');
+}
+
 if (errors.length > 0) {
   console.error('Validering feilet:\n' + errors.map((e) => `  - ${e}`).join('\n'));
   process.exit(1);

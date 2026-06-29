@@ -143,6 +143,46 @@
       ],
       "run_at": "document_start",
       "all_frames": true
+    },
+    {
+      "matches": [
+        "*://*.aftenposten.no/*",
+        "*://*.aftonbladet.se/*",
+        "*://*.ap.no/*",
+        "*://*.ba.no/*",
+        "*://*.bt.no/*",
+        "*://*.dn.no/*",
+        "*://*.e24.no/*",
+        "*://*.godt.no/*",
+        "*://*.hbl.fi/*",
+        "*://*.omni.se/*",
+        "*://*.side2.no/*",
+        "*://*.svd.se/*",
+        "*://*.tek.no/*",
+        "*://*.vg.no/*",
+        "*://*.vgd.no/*",
+        "*://aftenposten.no/*",
+        "*://aftonbladet.se/*",
+        "*://ap.no/*",
+        "*://ba.no/*",
+        "*://bt.no/*",
+        "*://dn.no/*",
+        "*://e24.no/*",
+        "*://godt.no/*",
+        "*://hbl.fi/*",
+        "*://omni.se/*",
+        "*://side2.no/*",
+        "*://svd.se/*",
+        "*://tek.no/*",
+        "*://vg.no/*",
+        "*://vgd.no/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
     }
   ],
   "icons": {
@@ -154,7 +194,7 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "schibsted-blocker@local",
-      "strict_min_version": "113.0"
+      "strict_min_version": "128.0"
     }
   }
 }

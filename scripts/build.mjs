@@ -37,6 +37,7 @@ function buildBrowser(name, manifestFile, zipName) {
   mkdirSync(join(out, 'icons'), { recursive: true });
 
   cpSync(join(SRC, 'content.js'), join(out, 'content.js'));
+  cpSync(join(SRC, 'inject.js'), join(out, 'inject.js'));
   cpSync(join(SRC, 'rules.json'), join(out, 'rules.json'));
   cpSync(join(SRC, manifestFile), join(out, 'manifest.json'));
   cpSync(join(SRC, 'icons', 'icon16.png'), join(out, 'icons', 'icon16.png'));
