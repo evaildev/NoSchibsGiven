@@ -4,7 +4,7 @@ Alle vesentlige endringer i dette prosjektet dokumenteres her.
 
 Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 
-## [Unreleased]
+## [2.3.0] - 2026-06-29
 
 ### Lagt til
 - TCF-stub (`src/inject.js`) som kjører i sidens MAIN-verden på Schibsted-domener og svarer på spillerens `__tcfapi`-spørringer med «GDPR gjelder, ingen samtykke gitt». Fikser at VGTV-videoer ikke kunne startes når CMP-en var blokkert ([#1](../../issues/1))
@@ -64,6 +64,8 @@ Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 ### Lagt til
 - Første release med nettverksblokkering og DOM-cleanup
 
+[2.3.0]: https://github.com/evaildev/NoSchibsGiven/compare/v2.2.1...v2.3.0
+[2.2.1]: https://github.com/evaildev/NoSchibsGiven/compare/v2.2.0...v2.2.1
 [2.2.0]: https://github.com/evaildev/NoSchibsGiven/compare/v2.1.2...v2.2.0
 [2.1.2]: https://github.com/evaildev/NoSchibsGiven/compare/v2.1.1...v2.1.2
 [2.1.1]: https://github.com/evaildev/NoSchibsGiven/compare/v2.1.0...v2.1.1
