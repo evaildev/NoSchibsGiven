@@ -651,7 +651,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "adnxs-simple.com",
+      "urlFilter": "adsdkprod.azureedge.net",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -702,7 +702,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "adsdkprod.azureedge.net",
+      "urlFilter": "confirmit.com",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -753,7 +753,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "confirmit.com",
+      "urlFilter": "log.medier24.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -804,7 +804,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "log.medier24.no",
+      "urlFilter": "ads.skm.microsoft.com",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -855,7 +855,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "ads.skm.microsoft.com",
+      "urlFilter": "fbevents-a.akamaihd.net",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -906,7 +906,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "fbevents-a.akamaihd.net",
+      "urlFilter": "getPulseTracker",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -957,7 +957,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "getPulseTracker",
+      "urlFilter": "SchibstedDataCommon",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -1008,7 +1008,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "SchibstedDataCommon",
+      "urlFilter": "initTracking",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -1059,57 +1059,6 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "initTracking",
-      "resourceTypes": [
-        "script",
-        "sub_frame",
-        "xmlhttprequest",
-        "ping",
-        "image",
-        "other"
-      ],
-      "initiatorDomains": [
-        "aftenposten.no",
-        "aftonbladet.se",
-        "ap.no",
-        "assets.vg.no",
-        "ba.no",
-        "bt.no",
-        "dn.no",
-        "e24.no",
-        "godt.no",
-        "hbl.fi",
-        "omni.se",
-        "side2.no",
-        "svd.se",
-        "tek.no",
-        "vg.no",
-        "vgd.no",
-        "www.aftenposten.no",
-        "www.aftonbladet.se",
-        "www.ap.no",
-        "www.ba.no",
-        "www.bt.no",
-        "www.dn.no",
-        "www.e24.no",
-        "www.godt.no",
-        "www.hbl.fi",
-        "www.omni.se",
-        "www.side2.no",
-        "www.svd.se",
-        "www.tek.no",
-        "www.vg.no",
-        "www.vgd.no"
-      ]
-    }
-  },
-  {
-    "id": 44,
-    "priority": 1,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
       "urlFilter": "InitialiseAdverts",
       "resourceTypes": [
         "script",
@@ -1155,7 +1104,7 @@
     }
   },
   {
-    "id": 45,
+    "id": 44,
     "priority": 1,
     "action": {
       "type": "block"

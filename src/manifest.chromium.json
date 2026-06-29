@@ -7,7 +7,6 @@
     "declarativeNetRequest"
   ],
   "host_permissions": [
-    "*://*.adnxs-simple.com/*",
     "*://*.aftenposten.no/*",
     "*://*.aftonbladet.se/*",
     "*://*.ap.no/*",
