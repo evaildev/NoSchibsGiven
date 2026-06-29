@@ -7,7 +7,7 @@
 // fra src/config.json så domenelisten aldri kommer ut av sync.
 
 (function () {
-  const SCHIBSTED_ROOTS = ["tek.no","vg.no","bt.no","ba.no","e24.no","aftenposten.no","ap.no","aftonbladet.se","omni.se","hbl.fi","dn.no","godt.no","side2.no","vgd.no","svd.se"];
+  const SCHIBSTED_ROOTS = __SCHIBSTED_ROOTS__;
 
   const hostname = location.hostname;
 

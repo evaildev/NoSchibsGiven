@@ -14,8 +14,30 @@ const SRC = join(ROOT, 'src');
 const config = JSON.parse(readFileSync(join(SRC, 'config.json'), 'utf8'));
 const rules = JSON.parse(readFileSync(join(SRC, 'rules.json'), 'utf8'));
 const chromium = JSON.parse(readFileSync(join(SRC, 'manifest.chromium.json'), 'utf8'));
+const contentJs = readFileSync(join(SRC, 'content.js'), 'utf8');
 
 const errors = [];
+
+// content.js genereres fra content.template.js. Sjekk at SCHIBSTED_ROOTS er i
+// sync med config.json — ellers er den generert på nytt med en utdatert template.
+const rootsMatch = contentJs.match(/const SCHIBSTED_ROOTS = (\[[^\]]*\]);/);
+if (!rootsMatch) {
+  errors.push('content.js mangler generert SCHIBSTED_ROOTS — kjør npm run generate');
+} else {
+  let contentRoots = [];
+  try {
+    contentRoots = JSON.parse(rootsMatch[1]);
+  } catch {
+    errors.push('content.js: SCHIBSTED_ROOTS er ikke gyldig JSON');
+  }
+  const expected = JSON.stringify(config.schibstedRoots);
+  if (JSON.stringify(contentRoots) !== expected) {
+    errors.push('content.js: SCHIBSTED_ROOTS matcher ikke config.json — kjør npm run generate');
+  }
+}
+if (contentJs.includes('__SCHIBSTED_ROOTS__')) {
+  errors.push('content.js inneholder ubehandlet placeholder __SCHIBSTED_ROOTS__');
+}
 const initiatorDomains = new Set();
 
 // Firefox/Chrome match pattern for host_permissions

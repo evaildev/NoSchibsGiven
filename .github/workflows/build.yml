@@ -11,6 +11,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -33,3 +35,9 @@ jobs:
           name: noschibsgiven-v${{ github.event.release.tag_name || 'snapshot' }}
           path: dist/*.zip
           if-no-files-found: error
+
+      - name: Attach ZIP-er til release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip

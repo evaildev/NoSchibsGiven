@@ -119,6 +119,16 @@ function buildContentScriptMatches() {
   return [...matches].sort();
 }
 
+function buildContentScript() {
+  const template = readFileSync(join(SRC, 'content.template.js'), 'utf8');
+  // Hardkod domenelisten fra config.json så content.js aldri kommer ut av sync.
+  const rootsLiteral = JSON.stringify(config.schibstedRoots);
+  if (!template.includes('__SCHIBSTED_ROOTS__')) {
+    throw new Error('content.template.js mangler placeholder __SCHIBSTED_ROOTS__');
+  }
+  return template.replaceAll('__SCHIBSTED_ROOTS__', rootsLiteral);
+}
+
 function buildManifest(browser) {
   const base = {
     manifest_version: 3,
@@ -168,6 +178,8 @@ function buildManifest(browser) {
 const rules = buildRules();
 writeFileSync(join(SRC, 'rules.json'), `${JSON.stringify(rules, null, 2)}\n`);
 
+writeFileSync(join(SRC, 'content.js'), buildContentScript());
+
 writeFileSync(
   join(SRC, 'manifest.chromium.json'),
   `${JSON.stringify(buildManifest('chromium'), null, 2)}\n`
@@ -200,4 +212,4 @@ writeFileSync(
   )}\n`
 );
 
-console.log(`Generert ${rules.length} DNR-regler, manifester og package.json (v${config.version})`);
+console.log(`Generert ${rules.length} DNR-regler, content.js, manifester og package.json (v${config.version})`);

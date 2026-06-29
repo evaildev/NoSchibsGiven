@@ -4,6 +4,16 @@ Alle vesentlige endringer i dette prosjektet dokumenteres her.
 
 Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 
+## [Unreleased]
+
+### Lagt til
+- `LICENSE`-fil (MIT) — tidligere kun referert i README
+- CI attacher nå `dist/*.zip` automatisk til GitHub Release når en release publiseres
+
+### Endret
+- `content.js` genereres nå fra `src/content.template.js` med domenelisten injisert fra `config.json` — `SCHIBSTED_ROOTS` kan ikke lenger komme ut av sync med config
+- Validering sjekker at `content.js` sin domeneliste matcher `config.json`
+
 ## [2.2.1] - 2026-06-16
 
 ### Fikset

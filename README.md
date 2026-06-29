@@ -153,12 +153,13 @@ npm run build
 | Fil | Formål |
 |-----|--------|
 | `src/config.json` | Domener og blokkeringslister (én kilde) |
-| `src/content.js` | DOM-cleanup og scroll-opplåsing |
-| `scripts/generate.mjs` | Genererer `rules.json` og manifester |
+| `src/content.template.js` | Mal for DOM-cleanup — rediger denne |
+| `src/content.js` | **Generert** fra malen + config (ikke rediger direkte) |
+| `scripts/generate.mjs` | Genererer `rules.json`, `content.js` og manifester |
 | `scripts/validate.mjs` | Sjekker konsistens før build |
 | `scripts/build.mjs` | Pakker Chromium- og Firefox-ZIP |
 
-For å legge til et nytt domene: oppdater `src/config.json`, kjør `npm run build`, og test på siden.
+For å legge til et nytt domene: oppdater **kun** `src/config.json`, kjør `npm run build`, og test på siden. Domenelisten i `content.js` genereres automatisk fra config, så den holdes alltid i sync.
 
 Endringslogg: se [CHANGELOG.md](CHANGELOG.md).
 
