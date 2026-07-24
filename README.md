@@ -21,7 +21,8 @@ Schibsted krever opptil 49 kr/md for å avvise annonsesporing. Datatilsynet og F
 
 🔗 [Datatilsynet: Schibsted tek betalt for personvern](https://www.datatilsynet.no/aktuelt/aktuelle-nyheter-2026/schibsted-tek-betalt-for-personvern/) *(april 2026)*  
 🔗 [Forbrukerrådet klager inn Schibsted til Datatilsynet](https://rett24.no/articles/forbrukerradet-klager-schibsted-inn-til-datatilsynet-for-betaling-for-personvern) *(juni 2026)*  
-🔗 [Datatilsynet åpner tilsyn med Schibsted](https://www.digi.no/artikler/datatilsynet-apner-tilsyn-med-schibsted/573703) *(juni 2026)*
+🔗 [Datatilsynet åpner tilsyn med Schibsted](https://www.digi.no/artikler/datatilsynet-apner-tilsyn-med-schibsted/573703) *(juni 2026)*  
+🔗 [Schibsted-sjefen tar selvkritikk: «Kommunikasjonen kunne vært bedre»](https://www.kom24.no/annonsevalg-datatilsynet-kommunikasjon/schibsted-sjefen-tar-selvkritikk-kommunikasjonen-kunne-vaert-bedre/936849) *(juli 2026)*
 
 ---
 
