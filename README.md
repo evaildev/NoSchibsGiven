@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <em>No Schibsted-given consent popups. Ever.</em>
+  <em>Personvern er ikke et abonnement.</em>
 </p>
 
 <p align="center">
@@ -13,6 +13,14 @@
 </p>
 
 ---
+
+## Hvorfor?
+
+Klarte ikke å dy meg da Schibsted fant ut at det var en glimrende idé å kreve løsepenger for at vi skal få lov til å takke nei til sporing. Jeg har ingenting imot å betale for ting, men jeg nekter faen meg å betale for å ikke bli overvåket.
+
+Så her er en extension som dreper hele driten før den rekker å laste. Det var genuint mindre tiltak å kode en egen extension enn å finne frem bankkortet. Vær så god.
+
+— evaildev
 
 Schibsted krever opptil 49 kr/md for å avvise annonsesporing. Datatilsynet og Forbrukerrådet mener det bryter med GDPR. Denne utvidelsen blokkerer popup-en helt — gratis, for alle.
 
