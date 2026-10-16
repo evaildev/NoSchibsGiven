@@ -42,32 +42,31 @@ Gå til **[Releases](../../releases)** og last ned riktig fil for din nettleser:
 
 | Nettleser | Fil |
 |-----------|-----|
-| Chrome | `noschibsgiven-chromium-vX.X.zip` |
-| Edge | `noschibsgiven-chromium-vX.X.zip` |
+| Chrome, Edge, Opera, Brave, Vivaldi | `noschibsgiven-chromium-vX.X.zip` |
 | Firefox | `noschibsgiven-firefox-vX.X.zip` |
-| Opera | `noschibsgiven-chromium-vX.X.zip` |
-| Brave | `noschibsgiven-chromium-vX.X.zip` |
-| Vivaldi | `noschibsgiven-chromium-vX.X.zip` |
 | Safari | [Se nedenfor ↓](#-safari) |
 
 ---
 
 ## 🔧 Installasjon
 
-### Chrome
+### Chrome, Edge, Opera, Brave og Vivaldi
+
+Alle disse bygger på Chromium, så fremgangsmåten er den samme:
 
 1. Last ned `noschibsgiven-chromium-vX.X.zip` og pakk den ut (høyreklikk → *Pakk ut alle*)
-2. Åpne Chrome og gå til `chrome://extensions/`
-3. Skru på **Utviklermodus** øverst til høyre
+2. Gå til utvidelsessiden i nettleseren din:
+
+   | Nettleser | Adresse |
+   |-----------|---------|
+   | Chrome | `chrome://extensions` |
+   | Edge | `edge://extensions` |
+   | Opera | `opera://extensions` |
+   | Brave | `brave://extensions` |
+   | Vivaldi | `vivaldi://extensions` |
+
+3. Skru på **Utviklermodus** (øverst til høyre, i Edge nederst til venstre)
 4. Klikk **Last inn upakket** og velg mappen du pakket ut
-5. Ferdig — utvidelsen er aktiv ✅
-
-### Edge
-
-1. Last ned og pakk ut `noschibsgiven-chromium-vX.X.zip`
-2. Åpne Edge og gå til `edge://extensions/`
-3. Skru på **Utviklermodus** nederst til venstre
-4. Klikk **Last inn upakket** og velg mappen
 5. Ferdig ✅
 
 ### Firefox
@@ -80,30 +79,6 @@ Gå til **[Releases](../../releases)** og last ned riktig fil for din nettleser:
 6. Ferdig ✅
 
 > ⚠️ **Merk:** Midlertidig installasjon forsvinner når Firefox lukkes. For permanent installasjon uten signering, bruk [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/) og sett `xpinstall.signatures.required` til `false` i `about:config`.
-
-### Opera
-
-1. Last ned og pakk ut `noschibsgiven-chromium-vX.X.zip`
-2. Åpne Opera og gå til `opera://extensions/`
-3. Skru på **Utviklermodus** øverst til høyre
-4. Klikk **Last inn upakket** og velg mappen
-5. Ferdig ✅
-
-### Brave
-
-1. Last ned og pakk ut `noschibsgiven-chromium-vX.X.zip`
-2. Åpne Brave og gå til `brave://extensions/`
-3. Skru på **Utviklermodus** øverst til høyre
-4. Klikk **Last inn upakket** og velg mappen
-5. Ferdig ✅
-
-### Vivaldi
-
-1. Last ned og pakk ut `noschibsgiven-chromium-vX.X.zip`
-2. Åpne Vivaldi og gå til `vivaldi://extensions/`
-3. Skru på **Utviklermodus** øverst til høyre
-4. Klikk **Last inn upakket** og velg mappen
-5. Ferdig ✅
 
 ### 🍎 Safari
 
