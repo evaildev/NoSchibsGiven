@@ -15,7 +15,9 @@ globalThis.NSG_SITES = {
     "godt.no",
     "side2.no",
     "vgd.no",
-    "svd.se"
+    "svd.se",
+    "aftenbladet.no",
+    "fvn.no"
   ],
   "repo": "https://github.com/evaildev/NoSchibsGiven"
 };

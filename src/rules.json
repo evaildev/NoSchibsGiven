@@ -654,7 +654,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "datadoghq-browser-agent.com",
+      "urlFilter": "cmp.aftenbladet.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -662,39 +662,6 @@
         "ping",
         "image",
         "other"
-      ],
-      "initiatorDomains": [
-        "aftenposten.no",
-        "aftonbladet.se",
-        "ap.no",
-        "assets.vg.no",
-        "ba.no",
-        "bt.no",
-        "dn.no",
-        "e24.no",
-        "godt.no",
-        "hbl.fi",
-        "omni.se",
-        "side2.no",
-        "svd.se",
-        "tek.no",
-        "vg.no",
-        "vgd.no",
-        "www.aftenposten.no",
-        "www.aftonbladet.se",
-        "www.ap.no",
-        "www.ba.no",
-        "www.bt.no",
-        "www.dn.no",
-        "www.e24.no",
-        "www.godt.no",
-        "www.hbl.fi",
-        "www.omni.se",
-        "www.side2.no",
-        "www.svd.se",
-        "www.tek.no",
-        "www.vg.no",
-        "www.vgd.no"
       ]
     }
   },
@@ -705,7 +672,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "adsdkprod.azureedge.net",
+      "urlFilter": "cmp.fvn.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -713,39 +680,6 @@
         "ping",
         "image",
         "other"
-      ],
-      "initiatorDomains": [
-        "aftenposten.no",
-        "aftonbladet.se",
-        "ap.no",
-        "assets.vg.no",
-        "ba.no",
-        "bt.no",
-        "dn.no",
-        "e24.no",
-        "godt.no",
-        "hbl.fi",
-        "omni.se",
-        "side2.no",
-        "svd.se",
-        "tek.no",
-        "vg.no",
-        "vgd.no",
-        "www.aftenposten.no",
-        "www.aftonbladet.se",
-        "www.ap.no",
-        "www.ba.no",
-        "www.bt.no",
-        "www.dn.no",
-        "www.e24.no",
-        "www.godt.no",
-        "www.hbl.fi",
-        "www.omni.se",
-        "www.side2.no",
-        "www.svd.se",
-        "www.tek.no",
-        "www.vg.no",
-        "www.vgd.no"
       ]
     }
   },
@@ -756,7 +690,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "confirmit.com",
+      "urlFilter": "datadoghq-browser-agent.com",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -766,6 +700,7 @@
         "other"
       ],
       "initiatorDomains": [
+        "aftenbladet.no",
         "aftenposten.no",
         "aftonbladet.se",
         "ap.no",
@@ -774,6 +709,7 @@
         "bt.no",
         "dn.no",
         "e24.no",
+        "fvn.no",
         "godt.no",
         "hbl.fi",
         "omni.se",
@@ -782,6 +718,7 @@
         "tek.no",
         "vg.no",
         "vgd.no",
+        "www.aftenbladet.no",
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
@@ -789,6 +726,7 @@
         "www.bt.no",
         "www.dn.no",
         "www.e24.no",
+        "www.fvn.no",
         "www.godt.no",
         "www.hbl.fi",
         "www.omni.se",
@@ -807,7 +745,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "log.medietall.no",
+      "urlFilter": "adsdkprod.azureedge.net",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -817,6 +755,7 @@
         "other"
       ],
       "initiatorDomains": [
+        "aftenbladet.no",
         "aftenposten.no",
         "aftonbladet.se",
         "ap.no",
@@ -825,6 +764,7 @@
         "bt.no",
         "dn.no",
         "e24.no",
+        "fvn.no",
         "godt.no",
         "hbl.fi",
         "omni.se",
@@ -833,6 +773,7 @@
         "tek.no",
         "vg.no",
         "vgd.no",
+        "www.aftenbladet.no",
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
@@ -840,6 +781,7 @@
         "www.bt.no",
         "www.dn.no",
         "www.e24.no",
+        "www.fvn.no",
         "www.godt.no",
         "www.hbl.fi",
         "www.omni.se",
@@ -858,7 +800,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "ads.skm.microsoft.com",
+      "urlFilter": "confirmit.com",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -868,6 +810,7 @@
         "other"
       ],
       "initiatorDomains": [
+        "aftenbladet.no",
         "aftenposten.no",
         "aftonbladet.se",
         "ap.no",
@@ -876,6 +819,7 @@
         "bt.no",
         "dn.no",
         "e24.no",
+        "fvn.no",
         "godt.no",
         "hbl.fi",
         "omni.se",
@@ -884,6 +828,7 @@
         "tek.no",
         "vg.no",
         "vgd.no",
+        "www.aftenbladet.no",
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
@@ -891,6 +836,7 @@
         "www.bt.no",
         "www.dn.no",
         "www.e24.no",
+        "www.fvn.no",
         "www.godt.no",
         "www.hbl.fi",
         "www.omni.se",
@@ -909,7 +855,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "fbevents-a.akamaihd.net",
+      "urlFilter": "log.medietall.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -919,6 +865,7 @@
         "other"
       ],
       "initiatorDomains": [
+        "aftenbladet.no",
         "aftenposten.no",
         "aftonbladet.se",
         "ap.no",
@@ -927,6 +874,7 @@
         "bt.no",
         "dn.no",
         "e24.no",
+        "fvn.no",
         "godt.no",
         "hbl.fi",
         "omni.se",
@@ -935,6 +883,7 @@
         "tek.no",
         "vg.no",
         "vgd.no",
+        "www.aftenbladet.no",
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
@@ -942,6 +891,7 @@
         "www.bt.no",
         "www.dn.no",
         "www.e24.no",
+        "www.fvn.no",
         "www.godt.no",
         "www.hbl.fi",
         "www.omni.se",
@@ -960,7 +910,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "getPulseTracker",
+      "urlFilter": "ads.skm.microsoft.com",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -970,6 +920,7 @@
         "other"
       ],
       "initiatorDomains": [
+        "aftenbladet.no",
         "aftenposten.no",
         "aftonbladet.se",
         "ap.no",
@@ -978,6 +929,7 @@
         "bt.no",
         "dn.no",
         "e24.no",
+        "fvn.no",
         "godt.no",
         "hbl.fi",
         "omni.se",
@@ -986,6 +938,7 @@
         "tek.no",
         "vg.no",
         "vgd.no",
+        "www.aftenbladet.no",
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
@@ -993,6 +946,7 @@
         "www.bt.no",
         "www.dn.no",
         "www.e24.no",
+        "www.fvn.no",
         "www.godt.no",
         "www.hbl.fi",
         "www.omni.se",
@@ -1011,7 +965,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "SchibstedDataCommon",
+      "urlFilter": "fbevents-a.akamaihd.net",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -1021,6 +975,7 @@
         "other"
       ],
       "initiatorDomains": [
+        "aftenbladet.no",
         "aftenposten.no",
         "aftonbladet.se",
         "ap.no",
@@ -1029,6 +984,7 @@
         "bt.no",
         "dn.no",
         "e24.no",
+        "fvn.no",
         "godt.no",
         "hbl.fi",
         "omni.se",
@@ -1037,6 +993,7 @@
         "tek.no",
         "vg.no",
         "vgd.no",
+        "www.aftenbladet.no",
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
@@ -1044,6 +1001,7 @@
         "www.bt.no",
         "www.dn.no",
         "www.e24.no",
+        "www.fvn.no",
         "www.godt.no",
         "www.hbl.fi",
         "www.omni.se",
@@ -1062,7 +1020,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "initTracking",
+      "urlFilter": "getPulseTracker",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -1072,6 +1030,7 @@
         "other"
       ],
       "initiatorDomains": [
+        "aftenbladet.no",
         "aftenposten.no",
         "aftonbladet.se",
         "ap.no",
@@ -1080,6 +1039,7 @@
         "bt.no",
         "dn.no",
         "e24.no",
+        "fvn.no",
         "godt.no",
         "hbl.fi",
         "omni.se",
@@ -1088,6 +1048,7 @@
         "tek.no",
         "vg.no",
         "vgd.no",
+        "www.aftenbladet.no",
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
@@ -1095,6 +1056,7 @@
         "www.bt.no",
         "www.dn.no",
         "www.e24.no",
+        "www.fvn.no",
         "www.godt.no",
         "www.hbl.fi",
         "www.omni.se",
@@ -1113,7 +1075,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "InitialiseAdverts",
+      "urlFilter": "SchibstedDataCommon",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -1123,6 +1085,7 @@
         "other"
       ],
       "initiatorDomains": [
+        "aftenbladet.no",
         "aftenposten.no",
         "aftonbladet.se",
         "ap.no",
@@ -1131,6 +1094,7 @@
         "bt.no",
         "dn.no",
         "e24.no",
+        "fvn.no",
         "godt.no",
         "hbl.fi",
         "omni.se",
@@ -1139,6 +1103,7 @@
         "tek.no",
         "vg.no",
         "vgd.no",
+        "www.aftenbladet.no",
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
@@ -1146,6 +1111,7 @@
         "www.bt.no",
         "www.dn.no",
         "www.e24.no",
+        "www.fvn.no",
         "www.godt.no",
         "www.hbl.fi",
         "www.omni.se",
@@ -1164,6 +1130,116 @@
       "type": "block"
     },
     "condition": {
+      "urlFilter": "initTracking",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "xmlhttprequest",
+        "ping",
+        "image",
+        "other"
+      ],
+      "initiatorDomains": [
+        "aftenbladet.no",
+        "aftenposten.no",
+        "aftonbladet.se",
+        "ap.no",
+        "assets.vg.no",
+        "ba.no",
+        "bt.no",
+        "dn.no",
+        "e24.no",
+        "fvn.no",
+        "godt.no",
+        "hbl.fi",
+        "omni.se",
+        "side2.no",
+        "svd.se",
+        "tek.no",
+        "vg.no",
+        "vgd.no",
+        "www.aftenbladet.no",
+        "www.aftenposten.no",
+        "www.aftonbladet.se",
+        "www.ap.no",
+        "www.ba.no",
+        "www.bt.no",
+        "www.dn.no",
+        "www.e24.no",
+        "www.fvn.no",
+        "www.godt.no",
+        "www.hbl.fi",
+        "www.omni.se",
+        "www.side2.no",
+        "www.svd.se",
+        "www.tek.no",
+        "www.vg.no",
+        "www.vgd.no"
+      ]
+    }
+  },
+  {
+    "id": 48,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "InitialiseAdverts",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "xmlhttprequest",
+        "ping",
+        "image",
+        "other"
+      ],
+      "initiatorDomains": [
+        "aftenbladet.no",
+        "aftenposten.no",
+        "aftonbladet.se",
+        "ap.no",
+        "assets.vg.no",
+        "ba.no",
+        "bt.no",
+        "dn.no",
+        "e24.no",
+        "fvn.no",
+        "godt.no",
+        "hbl.fi",
+        "omni.se",
+        "side2.no",
+        "svd.se",
+        "tek.no",
+        "vg.no",
+        "vgd.no",
+        "www.aftenbladet.no",
+        "www.aftenposten.no",
+        "www.aftonbladet.se",
+        "www.ap.no",
+        "www.ba.no",
+        "www.bt.no",
+        "www.dn.no",
+        "www.e24.no",
+        "www.fvn.no",
+        "www.godt.no",
+        "www.hbl.fi",
+        "www.omni.se",
+        "www.side2.no",
+        "www.svd.se",
+        "www.tek.no",
+        "www.vg.no",
+        "www.vgd.no"
+      ]
+    }
+  },
+  {
+    "id": 49,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
       "urlFilter": "/consents",
       "resourceTypes": [
         "script",
@@ -1174,6 +1250,7 @@
         "other"
       ],
       "initiatorDomains": [
+        "aftenbladet.no",
         "aftenposten.no",
         "aftonbladet.se",
         "ap.no",
@@ -1182,6 +1259,7 @@
         "bt.no",
         "dn.no",
         "e24.no",
+        "fvn.no",
         "godt.no",
         "hbl.fi",
         "omni.se",
@@ -1190,6 +1268,7 @@
         "tek.no",
         "vg.no",
         "vgd.no",
+        "www.aftenbladet.no",
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
@@ -1197,6 +1276,7 @@
         "www.bt.no",
         "www.dn.no",
         "www.e24.no",
+        "www.fvn.no",
         "www.godt.no",
         "www.hbl.fi",
         "www.omni.se",

@@ -116,7 +116,7 @@ Utvidelsen bruker tre lag med beskyttelse:
 
 SourcePoint-blokkeringen fungerer på **alle** nettsider som bruker SourcePoint som CMP. Schibsted-spesifikk tracking-blokkering gjelder Schibsted Media-sider:
 
-`tek.no` · `vg.no` · `bt.no` · `ba.no` · `e24.no` · `aftenposten.no` · `ap.no` · `aftonbladet.se` · `omni.se` · `hbl.fi` · `dn.no` · `godt.no` · `side2.no` · `vgd.no` · `svd.se`
+`tek.no` · `vg.no` · `bt.no` · `ba.no` · `e24.no` · `aftenposten.no` · `ap.no` · `aftonbladet.se` · `omni.se` · `hbl.fi` · `dn.no` · `godt.no` · `side2.no` · `vgd.no` · `svd.se` · `aftenbladet.no` · `fvn.no`
 
 ### Hva utvidelsen ikke blokkerer
 

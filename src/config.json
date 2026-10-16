@@ -15,7 +15,9 @@
     "godt.no",
     "side2.no",
     "vgd.no",
-    "svd.se"
+    "svd.se",
+    "aftenbladet.no",
+    "fvn.no"
   ],
   "schibstedExtraHosts": [
     "assets.vg.no",
@@ -33,7 +35,9 @@
     "www.godt.no",
     "www.side2.no",
     "www.vgd.no",
-    "www.svd.se"
+    "www.svd.se",
+    "www.aftenbladet.no",
+    "www.fvn.no"
   ],
   "globalUrlFilters": [
     "cdn.privacy-mgmt.com",
