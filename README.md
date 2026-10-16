@@ -165,7 +165,7 @@ npm run build
 
 For å legge til et nytt domene: oppdater **kun** `src/config.json`, kjør `npm run build`, og test på siden. Domenelisten i `content.js` genereres automatisk fra config, så den holdes alltid i sync.
 
-Endringslogg: se [CHANGELOG.md](CHANGELOG.md).
+Endringslogg: se [CHANGELOG.md](CHANGELOG.md). Personvern: se [PRIVACY.md](PRIVACY.md).
 
 ---
 

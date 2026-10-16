@@ -167,8 +167,13 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "schibsted-blocker@local",
-      "strict_min_version": "128.0"
+      "id": "noschibsgiven@evaildev",
+      "strict_min_version": "128.0",
+      "data_collection_permissions": {
+        "required": [
+          "none"
+        ]
+      }
     }
   }
 }

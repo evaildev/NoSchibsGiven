@@ -111,6 +111,13 @@ if (!firefox.permissions.includes('webRequest')) {
 if (chromium.permissions.includes('webRequest')) {
   errors.push('Chromium-manifest skal ikke ha webRequest (telleren bruker getMatchedRules)');
 }
+const gecko = firefox.browser_specific_settings?.gecko ?? {};
+if (gecko.id !== 'noschibsgiven@evaildev') {
+  errors.push(`Firefox-ID må være noschibsgiven@evaildev (er ${gecko.id}). Den kan ikke endres etter AMO-opplasting`);
+}
+if (JSON.stringify(gecko.data_collection_permissions?.required) !== '["none"]') {
+  errors.push('Firefox-manifest mangler data_collection_permissions: { required: ["none"] }');
+}
 if (chromium.background?.service_worker !== 'background.js') {
   errors.push('Chromium-manifest mangler background.service_worker');
 }

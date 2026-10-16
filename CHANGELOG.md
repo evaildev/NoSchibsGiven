@@ -18,6 +18,8 @@ Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 
 ### Endret
 - Firefox-versjonen ber om tillatelsen `webRequest` (kun for telleren). Chromium-versjonen er uendret
+- Ny Firefox-ID (`noschibsgiven@evaildev`) og `data_collection_permissions` som forberedelse til addons.mozilla.org. Har du installert utvidelsen permanent i Firefox Developer Edition, må du fjerne den gamle før du installerer denne
+- Personvernerklæring i `PRIVACY.md`
 
 ## [3.0.0] - 2026-10-16
 
