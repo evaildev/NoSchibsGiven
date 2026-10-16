@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "NoSchibsGiven",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "Blokkerer Schibsted sin betalte samtykke-popup og all client-side sporing på Schibsted Media-sider.",
   "permissions": [
     "declarativeNetRequest"
@@ -60,9 +60,7 @@
     "*://godt.no/*",
     "*://hbl.fi/*",
     "*://log.insider.no/*",
-    "*://log.mediafall.no/*",
-    "*://log.medier24.no/*",
-    "*://log.medieretall.no/*",
+    "*://log.medietall.no/*",
     "*://omni.se/*",
     "*://pulse.schibsted.media/*",
     "*://sdk.pulse.schibsted.com/*",

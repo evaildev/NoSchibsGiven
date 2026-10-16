@@ -4,6 +4,20 @@ Alle vesentlige endringer i dette prosjektet dokumenteres her.
 
 Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 
+## [2.3.2] - 2026-10-16
+
+### Fikset
+- Kantar sitt måledomene `log.medietall.no` ble ikke blokkert fordi config inneholdt feilstavede varianter (`log.medieretall.no`, `log.mediafall.no`, `log.medier24.no`) som ikke finnes i DNS. Erstattet med riktig domene, scoped til Schibsted-sider
+
+### Endret
+- README beskriver nå at AppNexus (`adnxs`) bevisst ikke blokkeres (se 2.3.0-oppfølging)
+- README oppdatert med nye saker om Schibsted annonsevalg (juli–august 2026)
+
+## [2.3.1] - 2026-07-29
+
+### Fikset
+- ZIP-pakkene ble bygget med backslash som stiseparator på Windows, slik at `icons`-mappen ikke ble pakket ut riktig. Arkivene bygges nå med `/` uansett plattform
+
 ## [2.3.0] - 2026-06-29
 
 ### Lagt til

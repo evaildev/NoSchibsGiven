@@ -22,7 +22,9 @@ Schibsted krever opptil 49 kr/md for å avvise annonsesporing. Datatilsynet og F
 🔗 [Datatilsynet: Schibsted tek betalt for personvern](https://www.datatilsynet.no/aktuelt/aktuelle-nyheter-2026/schibsted-tek-betalt-for-personvern/) *(april 2026)*  
 🔗 [Forbrukerrådet klager inn Schibsted til Datatilsynet](https://rett24.no/articles/forbrukerradet-klager-schibsted-inn-til-datatilsynet-for-betaling-for-personvern) *(juni 2026)*  
 🔗 [Datatilsynet åpner tilsyn med Schibsted](https://www.digi.no/artikler/datatilsynet-apner-tilsyn-med-schibsted/573703) *(juni 2026)*  
-🔗 [Schibsted-sjefen tar selvkritikk: «Kommunikasjonen kunne vært bedre»](https://www.kom24.no/annonsevalg-datatilsynet-kommunikasjon/schibsted-sjefen-tar-selvkritikk-kommunikasjonen-kunne-vaert-bedre/936849) *(juli 2026)*
+🔗 [Schibsted-sjefen tar selvkritikk: «Kommunikasjonen kunne vært bedre»](https://www.kom24.no/annonsevalg-datatilsynet-kommunikasjon/schibsted-sjefen-tar-selvkritikk-kommunikasjonen-kunne-vaert-bedre/936849) *(juli 2026)*  
+🔗 [Staten reagerer på Schibsted-grep](https://www.kampanje.com/medier/staten-reagerer-pa-schibsted-grep/1016504) — departementenes DSS mener det er urimelig at ansatte må betale *(juli 2026)*  
+🔗 [Schibsted ba Datatilsynet dempe kritikken](https://www.nettavisen.no/schibsted/datatilsynet/personvern/schibsted-ba-datatilsynet-dempe-kritikken/s/5-95-3208094) — over 300 tips og 52 klager *(august 2026)*
 
 ---
 
@@ -112,8 +114,9 @@ Utvidelsen bruker to lag med beskyttelse:
 1. **Nettverksblokkering** — Blokkerer på nettverksnivå:
    - SourcePoint sine servere (`cdn.privacy-mgmt.com`) — popup-scriptet laster aldri inn
    - Schibsted sitt eget CMP (`cmp.tek.no`, `cmp.vg.no`, osv.)
-   - Schibsted tracking og analytics (`sdk.pulse.schibsted.com`, `log.mediafall.no`, `static.privacy.schibsted.com`, `ads.inventory.schibsted.io`)
-   - Tredjeparts annonsenettverk (AppNexus, Datadog, Azure ad SDK) — **kun** på Schibsted Media-sider
+   - Schibsted tracking og analytics (`sdk.pulse.schibsted.com`, `static.privacy.schibsted.com`, `ads.inventory.schibsted.io`)
+   - Tredjeparts sporing og annonse-SDK-er (Datadog, Azure ad SDK, Microsoft Ads, Kantar `log.medietall.no`) — **kun** på Schibsted Media-sider
+   - AppNexus (`adnxs`) blokkeres **ikke**: uten samtykke kan den bare vise kontekstuelle annonser, og blokkering ga 3–4 sekunders forsinkelse på VGTV
 2. **DOM-cleanup** — Et backup-script fjerner eventuelle gjenværende samtykke-elementer automatisk når siden lastes. På Schibsted-sider ryddes også `localStorage`-nøkler som SourcePoint bruker til å huske samtykke.
 3. **TCF-stub** — På Schibsted-sider svarer utvidelsen på spillerens samtykke-spørringer (`__tcfapi`) med «GDPR gjelder, ingen samtykke gitt». Uten dette ville videospillere (f.eks. VGTV) henge fordi de venter på et svar fra den blokkerte CMP-en.
 

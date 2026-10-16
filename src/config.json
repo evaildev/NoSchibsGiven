@@ -1,5 +1,5 @@
 {
-  "version": "2.3.1",
+  "version": "2.3.2",
   "schibstedRoots": [
     "tek.no",
     "vg.no",
@@ -42,9 +42,7 @@
     "sdk.pulse.schibsted.com",
     "static.privacy.schibsted.com",
     "ads.inventory.schibsted.io",
-    "log.mediafall.no",
     "pulse.schibsted.media",
-    "log.medieretall.no",
     "cognifront.mvt.forbruker.schibsted.no",
     "session-service.payment.schibsted.no",
     "ads.inventory.schibsted.no",
@@ -59,7 +57,7 @@
     "datadoghq-browser-agent.com",
     "adsdkprod.azureedge.net",
     "confirmit.com",
-    "log.medier24.no",
+    "log.medietall.no",
     "ads.skm.microsoft.com",
     "fbevents-a.akamaihd.net",
     "getPulseTracker",
