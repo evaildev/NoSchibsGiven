@@ -44,10 +44,10 @@ Gå til **[Releases](../../releases)** og last ned riktig fil for din nettleser:
 |-----------|-----|
 | Chrome | `noschibsgiven-chromium-vX.X.zip` |
 | Edge | `noschibsgiven-chromium-vX.X.zip` |
+| Firefox | `noschibsgiven-firefox-vX.X.zip` |
 | Opera | `noschibsgiven-chromium-vX.X.zip` |
 | Brave | `noschibsgiven-chromium-vX.X.zip` |
 | Vivaldi | `noschibsgiven-chromium-vX.X.zip` |
-| Firefox | `noschibsgiven-firefox-vX.X.zip` |
 | Safari | [Se nedenfor ↓](#-safari) |
 
 ---
@@ -69,6 +69,17 @@ Gå til **[Releases](../../releases)** og last ned riktig fil for din nettleser:
 3. Skru på **Utviklermodus** nederst til venstre
 4. Klikk **Last inn upakket** og velg mappen
 5. Ferdig ✅
+
+### Firefox
+
+1. Last ned og pakk ut `noschibsgiven-firefox-vX.X.zip`
+2. Åpne Firefox og gå til `about:debugging`
+3. Klikk **This Firefox** i menyen til venstre
+4. Klikk **Load Temporary Add-on...**
+5. Gå inn i mappen du pakket ut og velg filen `manifest.json`
+6. Ferdig ✅
+
+> ⚠️ **Merk:** Midlertidig installasjon forsvinner når Firefox lukkes. For permanent installasjon uten signering, bruk [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/) og sett `xpinstall.signatures.required` til `false` i `about:config`.
 
 ### Opera
 
@@ -93,17 +104,6 @@ Gå til **[Releases](../../releases)** og last ned riktig fil for din nettleser:
 3. Skru på **Utviklermodus** øverst til høyre
 4. Klikk **Last inn upakket** og velg mappen
 5. Ferdig ✅
-
-### Firefox
-
-1. Last ned og pakk ut `noschibsgiven-firefox-vX.X.zip`
-2. Åpne Firefox og gå til `about:debugging`
-3. Klikk **This Firefox** i menyen til venstre
-4. Klikk **Load Temporary Add-on...**
-5. Gå inn i mappen du pakket ut og velg filen `manifest.json`
-6. Ferdig ✅
-
-> ⚠️ **Merk:** Midlertidig installasjon forsvinner når Firefox lukkes. For permanent installasjon uten signering, bruk [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/) og sett `xpinstall.signatures.required` til `false` i `about:config`.
 
 ### 🍎 Safari
 
