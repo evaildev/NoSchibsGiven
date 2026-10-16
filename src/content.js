@@ -19,6 +19,14 @@
 
   const onSchibsted = isSchibstedSite();
 
+  // Pause per side styres fra popupen. Bakgrunnsscriptet vet hvilken side
+  // fanen viser, også når vi kjører i en iframe (f.eks. SourcePoint sin).
+  // Til svaret kommer er vi aktive — popupen rekker ikke å vises før det.
+  let paused = false;
+  const api = globalThis.browser ?? globalThis.chrome;
+  const mayBePaused = onSchibsted || /privacy-mgmt\.com|sourcepoint\.com/.test(hostname);
+  let pauseKnown = !mayBePaused;
+
   // SourcePoint-spesifikke selektorer — trygge på alle sider
   const SOURCEPOINT_CSS = `
     [id^="sp_message_container"],
@@ -101,12 +109,14 @@
   }
 
   function shouldRemove(node) {
+    if (paused) return false;
     if (isSourcePointNode(node)) return true;
     if (onSchibsted && isSchibstedCmpNode(node)) return true;
     return false;
   }
 
   function cleanDOM() {
+    if (paused) return;
     const selectors = onSchibsted
       ? [
           '[id^="sp_message_container"]',
@@ -138,7 +148,7 @@
    * Vi fjerner kun nøkler med kjent SourcePoint-prefiks (best-effort).
    */
   function neutralizeSourcePointStorage() {
-    if (!onSchibsted) return;
+    if (!onSchibsted || paused || !pauseKnown) return;
     try {
       const toRemove = [];
       for (let i = 0; i < localStorage.length; i++) {
@@ -154,7 +164,25 @@
   }
 
   cleanDOM();
-  neutralizeSourcePointStorage();
+
+  // SourcePoint-nøkler fjernes først når vi vet at siden ikke er pauset,
+  // ellers ville brukeren blitt spurt om samtykke på nytt ved hver lasting.
+  if (mayBePaused) {
+    new Promise((resolve) => resolve(api.runtime.sendMessage({ type: 'nsg:isPaused' })))
+      .catch(() => null)
+      .then((res) => {
+        pauseKnown = true;
+        if (res?.paused) {
+          paused = true;
+          style.remove();
+          observer.disconnect();
+        } else {
+          neutralizeSourcePointStorage();
+        }
+      });
+  } else {
+    neutralizeSourcePointStorage();
+  }
 
   document.addEventListener('DOMContentLoaded', () => {
     cleanDOM();

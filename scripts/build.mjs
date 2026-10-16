@@ -120,6 +120,11 @@ function buildBrowser(name, manifestFile, zipName) {
   const files = [
     ['content.js', 'content.js'],
     ['inject.js', 'inject.js'],
+    ['background.js', 'background.js'],
+    ['sites.js', 'sites.js'],
+    ['popup.html', 'popup.html'],
+    ['popup.css', 'popup.css'],
+    ['popup.js', 'popup.js'],
     ['rules.json', 'rules.json'],
     [manifestFile, 'manifest.json'],
     [join('icons', 'icon16.png'), join('icons', 'icon16.png')],

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>NoSchibsGiven</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="row">
+    <img src="icons/icon32.png" alt="" width="28" height="28">
+    <div class="grow">
+      <p class="name">NoSchibsGiven</p>
+      <p class="muted small" id="version"></p>
+    </div>
+    <span class="pill" id="status">Aktiv</span>
+  </header>
+
+  <section class="block">
+    <p class="muted small" id="counter-label">Blokkert på denne siden</p>
+    <p class="count" id="count">–</p>
+    <ul class="categories" id="categories"></ul>
+    <details id="details" hidden>
+      <summary class="small">Vis domener</summary>
+      <ul class="filters small" id="filters"></ul>
+    </details>
+    <p class="muted small" id="counter-note" hidden></p>
+  </section>
+
+  <section class="block row" id="pause-row" hidden>
+    <label class="grow" for="pause">Pause på <span id="pause-site"></span></label>
+    <input type="checkbox" id="pause" class="switch">
+  </section>
+  <p class="muted small block" id="pause-note" hidden>Pause er bare tilgjengelig på Schibsted-sider.</p>
+
+  <section class="block actions">
+    <button id="complain" type="button">Klag til Datatilsynet</button>
+    <button id="report" type="button">Meld nytt domene</button>
+  </section>
+  <p class="toast small" id="toast" hidden></p>
+
+  <script src="sites.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -4,6 +4,20 @@ Alle vesentlige endringer i dette prosjektet dokumenteres her.
 
 Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 
+## [3.0.0] - 2026-10-16
+
+### Lagt til
+- Popup i verktøylinja med teller for blokkerte forespørsler på siden du står på (samtykke-popup, sporing, annonse-SDK-er) og liste over domenene. Antallet vises også som badge på ikonet (Chromium)
+- **Pause på denne siden**: skrur av all blokkering, DOM-cleanup og TCF-stubben for én Schibsted-side, f.eks. når innlogging eller betaling ikke virker
+- **Klag til Datatilsynet**: kopierer en ferdig klagetekst og åpner klagesiden
+- **Meld nytt domene**: åpner issue-malen med siden fylt inn
+- `background.js` og generert `sites.js`
+
+### Endret
+- TCF-stubben (`inject.js`) registreres nå dynamisk av `background.js` med `scripting.registerContentScripts`, slik at den kan ekskluderes på pausede sider
+- Nye tillatelser: `scripting`, `storage` og `activeTab`. Telleren bruker `activeTab`, så utvidelsen trenger ikke `declarativeNetRequestFeedback`
+- Validering sjekker background, popup og at `sites.js` er i sync med config
+
 ## [2.3.3] - 2026-10-16
 
 ### Lagt til

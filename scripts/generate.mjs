@@ -119,17 +119,6 @@ function buildContentScriptMatches() {
   return [...matches].sort();
 }
 
-function buildSchibstedMatches() {
-  const matches = new Set();
-
-  for (const root of config.schibstedRoots) {
-    matches.add(`*://${root}/*`);
-    matches.add(`*://*.${root}/*`);
-  }
-
-  return [...matches].sort();
-}
-
 function buildContentScript() {
   const template = readFileSync(join(SRC, 'content.template.js'), 'utf8');
   // Hardkod domenelisten fra config.json så content.js aldri kommer ut av sync.
@@ -140,6 +129,19 @@ function buildContentScript() {
   return template.replaceAll('__SCHIBSTED_ROOTS__', rootsLiteral);
 }
 
+// Felles domeneliste for background.js og popupen.
+function buildSitesScript() {
+  const sites = {
+    roots: config.schibstedRoots,
+    repo: 'https://github.com/evaildev/NoSchibsGiven',
+  };
+  return [
+    '// GENERERT FIL — bygges fra src/config.json av scripts/generate.mjs.',
+    `globalThis.NSG_SITES = ${JSON.stringify(sites, null, 2)};`,
+    '',
+  ].join('\n');
+}
+
 function buildManifest(browser) {
   const base = {
     manifest_version: 3,
@@ -147,7 +149,9 @@ function buildManifest(browser) {
     version: config.version,
     description:
       'Blokkerer Schibsted sin betalte samtykke-popup og all client-side sporing på Schibsted Media-sider.',
-    permissions: ['declarativeNetRequest'],
+    // scripting: TCF-stubben registreres dynamisk så den kan pauses per side.
+    // activeTab: popupen leser blokkerte forespørsler for fanen du står på.
+    permissions: ['declarativeNetRequest', 'scripting', 'storage', 'activeTab'],
     host_permissions: buildHostPermissions(),
     declarative_net_request: {
       rule_resources: [
@@ -165,17 +169,20 @@ function buildManifest(browser) {
         run_at: 'document_start',
         all_frames: true,
       },
-      {
-        // TCF-stub i sidens MAIN-verden — lar videospillere (VGTV/JWPlayer)
-        // starte selv om SourcePoint-CMP er nettverksblokkert. Kun på
-        // Schibsted-domener for å ikke påvirke andre nettsteder.
-        matches: buildSchibstedMatches(),
-        js: ['inject.js'],
-        run_at: 'document_start',
-        all_frames: true,
-        world: 'MAIN',
-      },
+      // TCF-stubben (inject.js) registreres av background.js, ikke her.
     ],
+    background:
+      browser === 'firefox'
+        ? { scripts: ['sites.js', 'background.js'] }
+        : { service_worker: 'background.js' },
+    action: {
+      default_title: 'NoSchibsGiven',
+      default_popup: 'popup.html',
+      default_icon: {
+        16: 'icons/icon16.png',
+        32: 'icons/icon32.png',
+      },
+    },
     icons: {
       16: 'icons/icon16.png',
       32: 'icons/icon32.png',
@@ -188,7 +195,7 @@ function buildManifest(browser) {
     base.browser_specific_settings = {
       gecko: {
         id: 'schibsted-blocker@local',
-        // world: "MAIN" i content_scripts krever Firefox 128+.
+        // world: "MAIN" i scripting.registerContentScripts krever Firefox 128+.
         strict_min_version: '128.0',
       },
     };
@@ -201,6 +208,8 @@ const rules = buildRules();
 writeFileSync(join(SRC, 'rules.json'), `${JSON.stringify(rules, null, 2)}\n`);
 
 writeFileSync(join(SRC, 'content.js'), buildContentScript());
+
+writeFileSync(join(SRC, 'sites.js'), buildSitesScript());
 
 writeFileSync(
   join(SRC, 'manifest.chromium.json'),
@@ -234,4 +243,4 @@ writeFileSync(
   )}\n`
 );
 
-console.log(`Generert ${rules.length} DNR-regler, content.js, manifester og package.json (v${config.version})`);
+console.log(`Generert ${rules.length} DNR-regler, content.js, sites.js, manifester og package.json (v${config.version})`);

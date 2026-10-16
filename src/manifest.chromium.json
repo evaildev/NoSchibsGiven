@@ -1,10 +1,13 @@
 {
   "manifest_version": 3,
   "name": "NoSchibsGiven",
-  "version": "2.3.3",
+  "version": "3.0.0",
   "description": "Blokkerer Schibsted sin betalte samtykke-popup og all client-side sporing på Schibsted Media-sider.",
   "permissions": [
-    "declarativeNetRequest"
+    "declarativeNetRequest",
+    "scripting",
+    "storage",
+    "activeTab"
   ],
   "host_permissions": [
     "*://*.aftenposten.no/*",
@@ -145,48 +148,19 @@
       ],
       "run_at": "document_start",
       "all_frames": true
-    },
-    {
-      "matches": [
-        "*://*.aftenposten.no/*",
-        "*://*.aftonbladet.se/*",
-        "*://*.ap.no/*",
-        "*://*.ba.no/*",
-        "*://*.bt.no/*",
-        "*://*.dn.no/*",
-        "*://*.e24.no/*",
-        "*://*.godt.no/*",
-        "*://*.hbl.fi/*",
-        "*://*.omni.se/*",
-        "*://*.side2.no/*",
-        "*://*.svd.se/*",
-        "*://*.tek.no/*",
-        "*://*.vg.no/*",
-        "*://*.vgd.no/*",
-        "*://aftenposten.no/*",
-        "*://aftonbladet.se/*",
-        "*://ap.no/*",
-        "*://ba.no/*",
-        "*://bt.no/*",
-        "*://dn.no/*",
-        "*://e24.no/*",
-        "*://godt.no/*",
-        "*://hbl.fi/*",
-        "*://omni.se/*",
-        "*://side2.no/*",
-        "*://svd.se/*",
-        "*://tek.no/*",
-        "*://vg.no/*",
-        "*://vgd.no/*"
-      ],
-      "js": [
-        "inject.js"
-      ],
-      "run_at": "document_start",
-      "all_frames": true,
-      "world": "MAIN"
     }
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "NoSchibsGiven",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",

@@ -14,7 +14,10 @@ const SRC = join(ROOT, 'src');
 const config = JSON.parse(readFileSync(join(SRC, 'config.json'), 'utf8'));
 const rules = JSON.parse(readFileSync(join(SRC, 'rules.json'), 'utf8'));
 const chromium = JSON.parse(readFileSync(join(SRC, 'manifest.chromium.json'), 'utf8'));
+const firefox = JSON.parse(readFileSync(join(SRC, 'manifest.firefox.json'), 'utf8'));
 const contentJs = readFileSync(join(SRC, 'content.js'), 'utf8');
+const backgroundJs = readFileSync(join(SRC, 'background.js'), 'utf8');
+const sitesJs = readFileSync(join(SRC, 'sites.js'), 'utf8');
 
 const errors = [];
 
@@ -86,17 +89,36 @@ if (chromium.version !== config.version) {
   errors.push(`manifest-versjon (${chromium.version}) matcher ikke config (${config.version})`);
 }
 
-// TCF-stubben må være registrert som en MAIN-world content script for at
-// videospillere skal kunne lese window.__tcfapi.
-const injectScript = (chromium.content_scripts || []).find(
-  (cs) => Array.isArray(cs.js) && cs.js.includes('inject.js')
-);
-if (!injectScript) {
-  errors.push('manifest mangler content script for inject.js (TCF-stub)');
-} else if (injectScript.world !== 'MAIN') {
-  errors.push('inject.js må kjøre i world: "MAIN" for å nå sidens __tcfapi');
-} else if (injectScript.run_at !== 'document_start') {
-  errors.push('inject.js bør kjøre på document_start (før sidens CMP-stub)');
+// TCF-stubben registreres dynamisk av background.js (så den kan pauses per
+// side). Den må kjøre i MAIN-verdenen på document_start for at videospillere
+// skal kunne lese window.__tcfapi før sidens egen CMP-stub.
+if ((chromium.content_scripts || []).some((cs) => cs.js?.includes('inject.js'))) {
+  errors.push('inject.js skal registreres av background.js, ikke i manifestet');
+}
+for (const needle of ["js: ['inject.js']", "world: 'MAIN'", "runAt: 'document_start'"]) {
+  if (!backgroundJs.includes(needle)) {
+    errors.push(`background.js mangler ${needle} for TCF-stubben`);
+  }
+}
+for (const perm of ['scripting', 'storage', 'activeTab']) {
+  if (!chromium.permissions.includes(perm)) {
+    errors.push(`manifest mangler permission: ${perm}`);
+  }
+}
+if (chromium.background?.service_worker !== 'background.js') {
+  errors.push('Chromium-manifest mangler background.service_worker');
+}
+if (JSON.stringify(firefox.background?.scripts) !== JSON.stringify(['sites.js', 'background.js'])) {
+  errors.push('Firefox-manifest må laste sites.js før background.js');
+}
+if (chromium.action?.default_popup !== 'popup.html') {
+  errors.push('manifest mangler action.default_popup');
+}
+
+// sites.js deles av background.js og popupen — må matche config.json.
+const sitesMatch = sitesJs.match(/globalThis\.NSG_SITES = (\{[\s\S]*\});/);
+if (!sitesMatch || JSON.stringify(JSON.parse(sitesMatch[1]).roots) !== JSON.stringify(config.schibstedRoots)) {
+  errors.push('sites.js matcher ikke config.json — kjør npm run generate');
 }
 
 if (errors.length > 0) {

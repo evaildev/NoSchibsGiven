@@ -115,9 +115,20 @@ Safari støtter dessverre ikke direkte installasjon av utvidelser fra ZIP-filer 
 
 ---
 
+## 🧩 Popup
+
+Klikk på ikonet i verktøylinja for å se:
+
+- **Teller** — hvor mange forespørsler som er blokkert på siden du står på, delt i samtykke-popup, sporing og annonse-SDK-er. Tallet vises også som badge på ikonet.
+- **Pause på denne siden** — skrur av utvidelsen for én Schibsted-side (f.eks. hvis innlogging eller betaling ikke virker). Siden lastes på nytt med alt slått av, og pausen gjelder til du skrur den av igjen.
+- **Klag til Datatilsynet** — kopierer en ferdig klagetekst og åpner klagesiden til Datatilsynet.
+- **Meld nytt domene** — åpner issue-malen med siden fylt inn.
+
+> I Firefox vises ikke telleren (nettleseren mangler API-et for det). Pause, klage og domenemelding virker som vanlig.
+
 ## 🛡️ Hvordan det fungerer
 
-Utvidelsen bruker to lag med beskyttelse:
+Utvidelsen bruker tre lag med beskyttelse:
 
 1. **Nettverksblokkering** — Blokkerer på nettverksnivå:
    - SourcePoint sine servere (`cdn.privacy-mgmt.com`) — popup-scriptet laster aldri inn
@@ -140,7 +151,7 @@ SourcePoint-blokkeringen fungerer på **alle** nettsider som bruker SourcePoint 
 
 ### Kjente begrensninger
 
-- **Schibsted Plus / betaling:** Domener som `session-service.payment.schibsted.no` blokkeres fordi de brukes til sporing. Dette kan i noen tilfeller påvirke innloggings- eller betalingsflyt. Rapporter gjerne om du opplever problemer.
+- **Schibsted Plus / betaling:** Domener som `session-service.payment.schibsted.no` blokkeres fordi de brukes til sporing. Dette kan i noen tilfeller påvirke innloggings- eller betalingsflyt. Bruk **Pause på denne siden** i popupen hvis det skjer, og rapporter gjerne problemet.
 - **Firefox:** Midlertidig installasjon krever manuell lasting ved hver oppstart (se installasjonssteg over).
 
 Fant du et nytt tracking-domene? Bruk [issue-malen for nye domener](../../issues/new?template=nytt-domene.md) eller åpne en vanlig [Issue](../../issues).
@@ -170,7 +181,10 @@ npm run build
 | `src/content.template.js` | Mal for DOM-cleanup — rediger denne |
 | `src/content.js` | **Generert** fra malen + config (ikke rediger direkte) |
 | `src/inject.js` | TCF-stub som kjører i sidens MAIN-verden (fikser videospillere) |
-| `scripts/generate.mjs` | Genererer `rules.json`, `content.js` og manifester |
+| `src/background.js` | Registrerer TCF-stubben, håndterer pause per side og badge-teller |
+| `src/popup.html` / `popup.js` / `popup.css` | Popupen i verktøylinja |
+| `src/sites.js` | **Generert** domeneliste som deles av background og popup |
+| `scripts/generate.mjs` | Genererer `rules.json`, `content.js`, `sites.js` og manifester |
 | `scripts/validate.mjs` | Sjekker konsistens før build |
 | `scripts/build.mjs` | Pakker Chromium- og Firefox-ZIP |
 
