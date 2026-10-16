@@ -95,11 +95,104 @@ function setupBadge() {
   }
 }
 
+// --- Teller i Firefox -----------------------------------------------------
+// Firefox mangler declarativeNetRequest.getMatchedRules. Der teller vi i
+// stedet forespørsler som feiler med NS_ERROR_ABORT og matcher en av reglene
+// våre (det er feilen Firefox gir når DNR blokkerer). Tellingen ligger i
+// storage.session fordi bakgrunnssiden avsluttes når den er inaktiv.
+
+const COUNTS_KEY = 'tabCounts';
+const useWebRequestCounter =
+  typeof api.declarativeNetRequest.getMatchedRules !== 'function' &&
+  Boolean(api.webRequest?.onErrorOccurred);
+
+let rulesPromise = null;
+function loadRules() {
+  rulesPromise ??= fetch(api.runtime.getURL('rules.json'))
+    .then((res) => res.json())
+    .then((rules) =>
+      rules.map((rule) => ({
+        filter: rule.condition.urlFilter,
+        needle: rule.condition.urlFilter.toLowerCase(),
+        initiators: rule.condition.initiatorDomains ?? null,
+      }))
+    );
+  return rulesPromise;
+}
+
+const hostIn = (host, domains) => domains.some((d) => host === d || host.endsWith('.' + d));
+
+// Samme logikk som DNR: urlFilter uten ankere er en delstreng av URL-en
+// (uavhengig av store/små bokstaver), og initiatorDomains gjelder dokumentet.
+function matchRule(rules, details) {
+  const url = details.url.toLowerCase();
+  let initiator = '';
+  try {
+    initiator = new URL(details.documentUrl ?? details.originUrl ?? '').hostname;
+  } catch {
+    // forespørsel uten dokument
+  }
+  return rules.find(
+    (rule) => url.includes(rule.needle) && (!rule.initiators || hostIn(initiator, rule.initiators))
+  );
+}
+
+let countsPromise = null;
+const getCounts = () =>
+  (countsPromise ??= api.storage.session.get(COUNTS_KEY).then((s) => s[COUNTS_KEY] ?? {}));
+
+let saveTimer = null;
+function scheduleSave(counts) {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => api.storage.session.set({ [COUNTS_KEY]: counts }), 250);
+}
+
+if (useWebRequestCounter) {
+  api.webRequest.onErrorOccurred.addListener(
+    async (details) => {
+      if (details.tabId < 0 || details.error !== 'NS_ERROR_ABORT') return;
+      const rule = matchRule(await loadRules(), details);
+      if (!rule) return;
+
+      const counts = await getCounts();
+      const tab = (counts[details.tabId] ??= {});
+      tab[rule.filter] = (tab[rule.filter] ?? 0) + 1;
+      scheduleSave(counts);
+
+      const total = Object.values(tab).reduce((sum, n) => sum + n, 0);
+      api.action.setBadgeText({ tabId: details.tabId, text: String(total) });
+    },
+    { urls: ['<all_urls>'] }
+  );
+
+  // Ny sidelasting i fanen nullstiller telleren, slik Chromium gjør.
+  api.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
+    if (changeInfo.status !== 'loading') return;
+    const counts = await getCounts();
+    if (counts[tabId]) {
+      delete counts[tabId];
+      scheduleSave(counts);
+    }
+    api.action.setBadgeText({ tabId, text: '' });
+  });
+
+  api.tabs.onRemoved.addListener(async (tabId) => {
+    const counts = await getCounts();
+    if (counts[tabId]) {
+      delete counts[tabId];
+      scheduleSave(counts);
+    }
+  });
+}
+
 api.runtime.onInstalled.addListener(() => {
   setupBadge();
   sync();
 });
-api.runtime.onStartup.addListener(sync);
+api.runtime.onStartup.addListener(() => {
+  setupBadge();
+  sync();
+});
 
 api.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg?.type === 'nsg:isPaused') {
@@ -119,6 +212,11 @@ api.runtime.onMessage.addListener((msg, sender, sendResponse) => {
       () => sendResponse({ ok: true }),
       (err) => sendResponse({ ok: false, error: String(err) })
     );
+    return true;
+  }
+
+  if (msg?.type === 'nsg:getCounts' && fromExtension && useWebRequestCounter) {
+    getCounts().then((counts) => sendResponse({ filters: counts[msg.tabId] ?? {} }));
     return true;
   }
 

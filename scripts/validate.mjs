@@ -105,6 +105,12 @@ for (const perm of ['scripting', 'storage', 'activeTab']) {
     errors.push(`manifest mangler permission: ${perm}`);
   }
 }
+if (!firefox.permissions.includes('webRequest')) {
+  errors.push('Firefox-manifest mangler webRequest (trengs for telleren)');
+}
+if (chromium.permissions.includes('webRequest')) {
+  errors.push('Chromium-manifest skal ikke ha webRequest (telleren bruker getMatchedRules)');
+}
 if (chromium.background?.service_worker !== 'background.js') {
   errors.push('Chromium-manifest mangler background.service_worker');
 }
