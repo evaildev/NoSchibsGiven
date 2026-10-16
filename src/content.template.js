@@ -34,7 +34,6 @@
     .sp_message_container,
     #sp_privacy_manager_container,
     #sp_privacy_manager,
-    .message-overlay,
     ._sp_overlay {
       display: none !important;
       visibility: hidden !important;
@@ -45,6 +44,7 @@
   // Ekstra Schibsted/CMP-selektorer — kun der vi vet det er trygt
   const SCHIBSTED_CSS = `
     #unified-gdpr,
+    .message-overlay,
     [class*="ConsentBanner"],
     [class*="consent-banner"],
     [class*="CookieBanner"],
@@ -81,15 +81,13 @@
     }
   }
 
+  // Bare SourcePoint sine egne navn. «sp_» alene treffer f.eks. wsp_header.
   function isSourcePointNode(node) {
     const id = node.id || '';
-    const cls = typeof node.className === 'string' ? node.className : '';
     return (
-      id.startsWith('sp_') ||
-      id.includes('sp_message') ||
-      cls.includes('sp_') ||
-      cls.includes('_sp_') ||
-      cls.includes('sp_message')
+      id.startsWith('sp_message') ||
+      id.startsWith('sp_privacy_manager') ||
+      [...(node.classList ?? [])].some((c) => c.startsWith('sp_message') || c === '_sp_overlay')
     );
   }
 
@@ -133,13 +131,19 @@
           '[id^="sp_message_iframe"]',
           '#sp_privacy_manager_container',
           '._sp_overlay',
-          '.message-overlay',
         ];
 
+    let removed = 0;
     selectors.forEach((sel) => {
-      document.querySelectorAll(sel).forEach((el) => el.remove());
+      document.querySelectorAll(sel).forEach((el) => {
+        el.remove();
+        removed++;
+      });
     });
-    unlockScroll();
+    // Schibsted låser scrolling for popupen selv om den aldri vises. Andre
+    // sider kan låse scrolling med vilje, der rører vi det bare hvis vi
+    // faktisk fjernet en popup.
+    if (onSchibsted || removed > 0) unlockScroll();
   }
 
   /**

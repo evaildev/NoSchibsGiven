@@ -9,6 +9,7 @@ Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 ### Fikset
 - Telleren i popupen virker nå i Firefox. Firefox mangler `declarativeNetRequest.getMatchedRules`, så `background.js` teller i stedet forespørsler som blokkeres (`webRequest.onErrorOccurred` med `NS_ERROR_ABORT` som matcher en av reglene). Tellingen lagres per fane i `storage.session`, nullstilles ved ny sidelasting og vises som badge på ikonet
 - Firefox sin forhåndslaster ber om blokkerte script og bilder to ganger. Disse telles én gang per sidelasting, slik at tallet blir det samme som i Chrome
+- DOM-cleanup kunne ødelegge andre nettsider enn Schibsted sine: den fjernet scroll-lås (`overflow-hidden`, `no-scroll`) på alle sider ved lasting, og fjernet elementer med «sp_» i klassenavnet (f.eks. `wsp_header`) eller klassen `.message-overlay`. Utenfor Schibsted rører den nå bare SourcePoint sine egne elementer, og låser bare opp scrolling når den faktisk har fjernet en popup
 
 ### Lagt til
 - Stavanger Aftenblad (`aftenbladet.no`) og Fædrelandsvennen (`fvn.no`). Fædrelandsvennen eies av Polaris Media, men bruker Schibsted sin plattform (Pulse, innlogging og betaling)
