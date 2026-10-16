@@ -124,7 +124,7 @@ Klikk på ikonet i verktøylinja for å se:
 - **Klag til Datatilsynet** — kopierer en ferdig klagetekst og åpner klagesiden til Datatilsynet.
 - **Meld nytt domene** — åpner issue-malen med siden fylt inn.
 
-> I Firefox vises ikke telleren (nettleseren mangler API-et for det). Pause, klage og domenemelding virker som vanlig.
+> I Firefox teller utvidelsen blokkerte forespørsler selv, siden nettleseren mangler API-et Chrome bruker. Derfor ber Firefox-versjonen også om tillatelsen `webRequest`. Den brukes bare til å telle, ikke til å lese eller endre innhold.
 
 ## 🛡️ Hvordan det fungerer
 

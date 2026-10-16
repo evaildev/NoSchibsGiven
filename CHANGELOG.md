@@ -4,6 +4,15 @@ Alle vesentlige endringer i dette prosjektet dokumenteres her.
 
 Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 
+## [3.0.1] - 2026-10-16
+
+### Fikset
+- Telleren i popupen virker nå i Firefox. Firefox mangler `declarativeNetRequest.getMatchedRules`, så `background.js` teller i stedet forespørsler som blokkeres (`webRequest.onErrorOccurred` med `NS_ERROR_ABORT` som matcher en av reglene). Tellingen lagres per fane i `storage.session`, nullstilles ved ny sidelasting og vises som badge på ikonet
+- Firefox sin forhåndslaster ber om blokkerte script og bilder to ganger. Disse telles én gang per sidelasting, slik at tallet blir det samme som i Chrome
+
+### Endret
+- Firefox-versjonen ber om tillatelsen `webRequest` (kun for telleren). Chromium-versjonen er uendret
+
 ## [3.0.0] - 2026-10-16
 
 ### Lagt til

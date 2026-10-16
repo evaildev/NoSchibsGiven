@@ -5,7 +5,8 @@
 // - Pause per side: en dynamisk DNR-regel (allowAllRequests) med høyere
 //   prioritet enn blokkeringsreglene slipper gjennom alt fra den siden.
 // - Svarer content.js på om fanen sin side er pauset.
-// - Viser antall blokkerte forespørsler som badge på ikonet (kun Chromium).
+// - Viser antall blokkerte forespørsler som badge på ikonet. Chromium teller
+//   selv, i Firefox teller vi via webRequest (se under).
 
 if (typeof importScripts === 'function' && !globalThis.NSG_SITES) {
   importScripts('sites.js');
@@ -95,11 +96,128 @@ function setupBadge() {
   }
 }
 
+// --- Teller i Firefox -----------------------------------------------------
+// Firefox mangler declarativeNetRequest.getMatchedRules. Der teller vi i
+// stedet forespørsler som feiler med NS_ERROR_ABORT og matcher en av reglene
+// våre (det er feilen Firefox gir når DNR blokkerer). Tellingen ligger i
+// storage.session fordi bakgrunnssiden avsluttes når den er inaktiv.
+
+const COUNTS_KEY = 'tabCounts';
+const useWebRequestCounter =
+  typeof api.declarativeNetRequest.getMatchedRules !== 'function' &&
+  Boolean(api.webRequest?.onErrorOccurred);
+
+let rulesPromise = null;
+function loadRules() {
+  rulesPromise ??= fetch(api.runtime.getURL('rules.json'))
+    .then((res) => res.json())
+    .then((rules) =>
+      rules.map((rule) => ({
+        filter: rule.condition.urlFilter,
+        needle: rule.condition.urlFilter.toLowerCase(),
+        initiators: rule.condition.initiatorDomains ?? null,
+        types: rule.condition.resourceTypes,
+      }))
+    );
+  return rulesPromise;
+}
+
+const hostIn = (host, domains) => domains.some((d) => host === d || host.endsWith('.' + d));
+
+// webRequest-typer som DNR kjenner under et annet navn.
+const DNR_TYPE = { beacon: 'ping', imageset: 'image' };
+
+// Samme logikk som DNR: urlFilter uten ankere er en delstreng av URL-en
+// (uavhengig av store/små bokstaver), og initiatorDomains gjelder dokumentet.
+function matchRule(rules, details) {
+  const url = details.url.toLowerCase();
+  const type = DNR_TYPE[details.type] ?? details.type;
+  let initiator = '';
+  try {
+    initiator = new URL(details.documentUrl ?? details.originUrl ?? '').hostname;
+  } catch {
+    // forespørsel uten dokument
+  }
+  return rules.find(
+    (rule) =>
+      url.includes(rule.needle) &&
+      rule.types.includes(type) &&
+      (!rule.initiators || hostIn(initiator, rule.initiators))
+  );
+}
+
+// Firefox sin forhåndslaster ber om script og bilder før parseren når dem.
+// Blir forhåndslastingen blokkert, prøver parseren på nytt med en ny
+// forespørsel, så samme ressurs gir to feil. Chromium teller den én gang,
+// så vi teller hver URL av disse typene bare én gang per sidelasting.
+const PRELOAD_TYPES = new Set(['script', 'image', 'imageset']);
+const seenPreloadable = new Map(); // tabId -> Set(url)
+
+let countsPromise = null;
+const getCounts = () =>
+  (countsPromise ??= api.storage.session.get(COUNTS_KEY).then((s) => s[COUNTS_KEY] ?? {}));
+
+let saveTimer = null;
+function scheduleSave(counts) {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => api.storage.session.set({ [COUNTS_KEY]: counts }), 250);
+}
+
+if (useWebRequestCounter) {
+  api.webRequest.onErrorOccurred.addListener(
+    async (details) => {
+      if (details.tabId < 0 || details.error !== 'NS_ERROR_ABORT') return;
+      const rule = matchRule(await loadRules(), details);
+      if (!rule) return;
+
+      if (PRELOAD_TYPES.has(details.type)) {
+        let seen = seenPreloadable.get(details.tabId);
+        if (!seen) seenPreloadable.set(details.tabId, (seen = new Set()));
+        if (seen.has(details.url)) return;
+        seen.add(details.url);
+      }
+
+      const counts = await getCounts();
+      const tab = (counts[details.tabId] ??= {});
+      tab[rule.filter] = (tab[rule.filter] ?? 0) + 1;
+      scheduleSave(counts);
+
+      const total = Object.values(tab).reduce((sum, n) => sum + n, 0);
+      api.action.setBadgeText({ tabId: details.tabId, text: String(total) });
+    },
+    { urls: ['<all_urls>'] }
+  );
+
+  // Ny sidelasting i fanen nullstiller telleren, slik Chromium gjør.
+  api.tabs.onUpdated.addListener(async (tabId, changeInfo) => {
+    if (changeInfo.status !== 'loading') return;
+    seenPreloadable.delete(tabId);
+    const counts = await getCounts();
+    if (counts[tabId]) {
+      delete counts[tabId];
+      scheduleSave(counts);
+    }
+    api.action.setBadgeText({ tabId, text: '' });
+  });
+
+  api.tabs.onRemoved.addListener(async (tabId) => {
+    seenPreloadable.delete(tabId);
+    const counts = await getCounts();
+    if (counts[tabId]) {
+      delete counts[tabId];
+      scheduleSave(counts);
+    }
+  });
+}
+
 api.runtime.onInstalled.addListener(() => {
   setupBadge();
   sync();
 });
-api.runtime.onStartup.addListener(sync);
+api.runtime.onStartup.addListener(() => {
+  setupBadge();
+  sync();
+});
 
 api.runtime.onMessage.addListener((msg, sender, sendResponse) => {
   if (msg?.type === 'nsg:isPaused') {
@@ -119,6 +237,11 @@ api.runtime.onMessage.addListener((msg, sender, sendResponse) => {
       () => sendResponse({ ok: true }),
       (err) => sendResponse({ ok: false, error: String(err) })
     );
+    return true;
+  }
+
+  if (msg?.type === 'nsg:getCounts' && fromExtension && useWebRequestCounter) {
+    getCounts().then((counts) => sendResponse({ filters: counts[msg.tabId] ?? {} }));
     return true;
   }
 

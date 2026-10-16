@@ -54,37 +54,43 @@ function showToast(text) {
   toast.hidden = false;
 }
 
-async function renderCounts(tab) {
-  if (typeof api.declarativeNetRequest.getMatchedRules !== 'function') {
-    $('count').textContent = '–';
-    $('counter-note').textContent = 'Telleren støttes ikke i denne nettleseren.';
-    $('counter-note').hidden = false;
-    return;
-  }
-
-  let matched;
-  let rules;
-  try {
-    [matched, rules] = await Promise.all([
+// Chromium: declarativeNetRequest.getMatchedRules (activeTab gir tilgang).
+// Firefox: background.js teller blokkerte forespørsler via webRequest.
+// Begge gir et kart { urlFilter: antall } for fanen.
+async function blockedFilters(tab) {
+  if (typeof api.declarativeNetRequest.getMatchedRules === 'function') {
+    const [matched, rules] = await Promise.all([
       api.declarativeNetRequest.getMatchedRules({ tabId: tab.id }),
       fetch(api.runtime.getURL('rules.json')).then((res) => res.json()),
     ]);
+    const filterById = new Map(rules.map((rule) => [rule.id, rule.condition.urlFilter]));
+    const filters = new Map();
+    for (const info of matched.rulesMatchedInfo) {
+      if (info.rule.rulesetId !== 'ruleset_1') continue;
+      const filter = filterById.get(info.rule.ruleId);
+      if (filter) filters.set(filter, (filters.get(filter) ?? 0) + 1);
+    }
+    return filters;
+  }
+
+  const res = await api.runtime.sendMessage({ type: 'nsg:getCounts', tabId: tab.id });
+  if (!res?.filters) throw new Error('telleren er ikke tilgjengelig');
+  return new Map(Object.entries(res.filters));
+}
+
+async function renderCounts(tab) {
+  let filters;
+  try {
+    filters = await blockedFilters(tab);
   } catch {
     $('counter-note').textContent = 'Klarte ikke å hente telleren. Prøv igjen om litt.';
     $('counter-note').hidden = false;
     return;
   }
 
-  const filterById = new Map(rules.map((rule) => [rule.id, rule.condition.urlFilter]));
   const counts = { popup: 0, tracking: 0, ads: 0 };
-  const filters = new Map();
-
-  for (const info of matched.rulesMatchedInfo) {
-    if (info.rule.rulesetId !== 'ruleset_1') continue;
-    const filter = filterById.get(info.rule.ruleId);
-    if (!filter) continue;
-    counts[categoryFor(filter)]++;
-    filters.set(filter, (filters.get(filter) ?? 0) + 1);
+  for (const [filter, n] of filters) {
+    counts[categoryFor(filter)] += n;
   }
 
   const total = counts.popup + counts.tracking + counts.ads;

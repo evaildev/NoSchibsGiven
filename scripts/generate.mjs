@@ -151,7 +151,14 @@ function buildManifest(browser) {
       'Blokkerer Schibsted sin betalte samtykke-popup og all client-side sporing på Schibsted Media-sider.',
     // scripting: TCF-stubben registreres dynamisk så den kan pauses per side.
     // activeTab: popupen leser blokkerte forespørsler for fanen du står på.
-    permissions: ['declarativeNetRequest', 'scripting', 'storage', 'activeTab'],
+    // webRequest (kun Firefox): telleren, siden Firefox mangler getMatchedRules.
+    permissions: [
+      'declarativeNetRequest',
+      'scripting',
+      'storage',
+      'activeTab',
+      ...(browser === 'firefox' ? ['webRequest'] : []),
+    ],
     host_permissions: buildHostPermissions(),
     declarative_net_request: {
       rule_resources: [

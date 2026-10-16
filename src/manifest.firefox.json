@@ -1,13 +1,14 @@
 {
   "manifest_version": 3,
   "name": "NoSchibsGiven",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Blokkerer Schibsted sin betalte samtykke-popup og all client-side sporing på Schibsted Media-sider.",
   "permissions": [
     "declarativeNetRequest",
     "scripting",
     "storage",
-    "activeTab"
+    "activeTab",
+    "webRequest"
   ],
   "host_permissions": [
     "*://*.aftenposten.no/*",
