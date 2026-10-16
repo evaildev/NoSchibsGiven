@@ -1,5 +1,5 @@
 {
-  "version": "2.3.2",
+  "version": "2.3.3",
   "schibstedRoots": [
     "tek.no",
     "vg.no",
@@ -51,7 +51,12 @@
     "log.insider.no",
     "session-admin.payment.schibsted.no",
     "vend.schibsted.ai",
-    "sentry.vgnett.no"
+    "sentry.vgnett.no",
+    "dc.schibsted.io",
+    "ncis.schibsted.com",
+    "cis.schibsted.com",
+    "collector.schibsted.io",
+    "sdkconfig.pulse.schibsted.io"
   ],
   "scopedUrlFilters": [
     "datadoghq-browser-agent.com",

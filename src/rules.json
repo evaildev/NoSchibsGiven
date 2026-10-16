@@ -294,7 +294,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.tek.no",
+      "urlFilter": "dc.schibsted.io",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -312,7 +312,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.vg.no",
+      "urlFilter": "ncis.schibsted.com",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -330,7 +330,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.bt.no",
+      "urlFilter": "cis.schibsted.com",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -348,7 +348,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.ba.no",
+      "urlFilter": "collector.schibsted.io",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -366,7 +366,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.e24.no",
+      "urlFilter": "sdkconfig.pulse.schibsted.io",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -384,7 +384,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.aftenposten.no",
+      "urlFilter": "cmp.tek.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -402,7 +402,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.ap.no",
+      "urlFilter": "cmp.vg.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -420,7 +420,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.aftonbladet.se",
+      "urlFilter": "cmp.bt.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -438,7 +438,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.omni.se",
+      "urlFilter": "cmp.ba.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -456,7 +456,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.hbl.fi",
+      "urlFilter": "cmp.e24.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -474,7 +474,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.dn.no",
+      "urlFilter": "cmp.aftenposten.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -492,7 +492,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.godt.no",
+      "urlFilter": "cmp.ap.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -510,7 +510,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.side2.no",
+      "urlFilter": "cmp.aftonbladet.se",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -528,7 +528,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.vgd.no",
+      "urlFilter": "cmp.omni.se",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -546,7 +546,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.svd.se",
+      "urlFilter": "cmp.hbl.fi",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -559,6 +559,96 @@
   },
   {
     "id": 32,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "cmp.dn.no",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "xmlhttprequest",
+        "ping",
+        "image",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "cmp.godt.no",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "xmlhttprequest",
+        "ping",
+        "image",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "cmp.side2.no",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "xmlhttprequest",
+        "ping",
+        "image",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 35,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "cmp.vgd.no",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "xmlhttprequest",
+        "ping",
+        "image",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 36,
+    "priority": 1,
+    "action": {
+      "type": "block"
+    },
+    "condition": {
+      "urlFilter": "cmp.svd.se",
+      "resourceTypes": [
+        "script",
+        "sub_frame",
+        "xmlhttprequest",
+        "ping",
+        "image",
+        "other"
+      ]
+    }
+  },
+  {
+    "id": 37,
     "priority": 1,
     "action": {
       "type": "block"
@@ -609,7 +699,7 @@
     }
   },
   {
-    "id": 33,
+    "id": 38,
     "priority": 1,
     "action": {
       "type": "block"
@@ -660,7 +750,7 @@
     }
   },
   {
-    "id": 34,
+    "id": 39,
     "priority": 1,
     "action": {
       "type": "block"
@@ -711,7 +801,7 @@
     }
   },
   {
-    "id": 35,
+    "id": 40,
     "priority": 1,
     "action": {
       "type": "block"
@@ -762,7 +852,7 @@
     }
   },
   {
-    "id": 36,
+    "id": 41,
     "priority": 1,
     "action": {
       "type": "block"
@@ -813,7 +903,7 @@
     }
   },
   {
-    "id": 37,
+    "id": 42,
     "priority": 1,
     "action": {
       "type": "block"
@@ -864,7 +954,7 @@
     }
   },
   {
-    "id": 38,
+    "id": 43,
     "priority": 1,
     "action": {
       "type": "block"
@@ -915,7 +1005,7 @@
     }
   },
   {
-    "id": 39,
+    "id": 44,
     "priority": 1,
     "action": {
       "type": "block"
@@ -966,7 +1056,7 @@
     }
   },
   {
-    "id": 40,
+    "id": 45,
     "priority": 1,
     "action": {
       "type": "block"
@@ -1017,7 +1107,7 @@
     }
   },
   {
-    "id": 41,
+    "id": 46,
     "priority": 1,
     "action": {
       "type": "block"
@@ -1068,7 +1158,7 @@
     }
   },
   {
-    "id": 42,
+    "id": 47,
     "priority": 1,
     "action": {
       "type": "block"

@@ -4,6 +4,11 @@ Alle vesentlige endringer i dette prosjektet dokumenteres her.
 
 Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 
+## [2.3.3] - 2026-10-16
+
+### Lagt til
+- Blokkering av Pulse sine innsamlingsendepunkter: `dc.schibsted.io`, `ncis.schibsted.com`, `cis.schibsted.com`, `collector.schibsted.io` og `sdkconfig.pulse.schibsted.io`. Pulse-SDK-en var allerede blokkert, men tek.no lastet fortsatt Pulse-konfigen som peker hit. Dette er ekstra sikring hvis Schibsted endrer hvor SDK-en lastes fra
+
 ## [2.3.2] - 2026-10-16
 
 ### Fikset

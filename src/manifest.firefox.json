@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "NoSchibsGiven",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "description": "Blokkerer Schibsted sin betalte samtykke-popup og all client-side sporing på Schibsted Media-sider.",
   "permissions": [
     "declarativeNetRequest"
@@ -37,6 +37,7 @@
     "*://ba.no/*",
     "*://bt.no/*",
     "*://cdn.privacy-mgmt.com/*",
+    "*://cis.schibsted.com/*",
     "*://cmp.aftenposten.no/*",
     "*://cmp.aftonbladet.se/*",
     "*://cmp.ap.no/*",
@@ -53,6 +54,8 @@
     "*://cmp.vg.no/*",
     "*://cmp.vgd.no/*",
     "*://cognifront.mvt.forbruker.schibsted.no/*",
+    "*://collector.schibsted.io/*",
+    "*://dc.schibsted.io/*",
     "*://dn.no/*",
     "*://e24.no/*",
     "*://esv.schibsted.com/*",
@@ -61,9 +64,11 @@
     "*://hbl.fi/*",
     "*://log.insider.no/*",
     "*://log.medietall.no/*",
+    "*://ncis.schibsted.com/*",
     "*://omni.se/*",
     "*://pulse.schibsted.media/*",
     "*://sdk.pulse.schibsted.com/*",
+    "*://sdkconfig.pulse.schibsted.io/*",
     "*://sentry.vgnett.no/*",
     "*://session-admin.payment.schibsted.no/*",
     "*://session-service.payment.schibsted.no/*",
