@@ -20,7 +20,7 @@ Tekster og bilder til Chrome Web Store, Firefox Add-ons (AMO) og Edge Add-ons.
 
 **Personvernerklæring:** https://github.com/evaildev/NoSchibsGiven/blob/master/PRIVACY.md
 
-**Bilder:** `1-blokkert.png`, `2-teller.png`, `3-pause.png` (1280×800) og `promo-440x280.png` (liten promo-flis i Chrome)
+**Bilder:** `icon-128.png` (ikon), `1-blokkert.png`, `2-teller.png`, `3-pause.png` (1280×800) og `promo-440x280.png` (liten promo-flis i Chrome)
 
 ## Lang beskrivelse
 
