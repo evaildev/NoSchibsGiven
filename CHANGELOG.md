@@ -11,7 +11,10 @@ Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 - Firefox sin forhåndslaster ber om blokkerte script og bilder to ganger. Disse telles én gang per sidelasting, slik at tallet blir det samme som i Chrome
 
 ### Lagt til
-- Stavanger Aftenblad (`aftenbladet.no`) og Fædrelandsvennen (`fvn.no`)
+- Stavanger Aftenblad (`aftenbladet.no`) og Fædrelandsvennen (`fvn.no`). Fædrelandsvennen eies av Polaris Media, men bruker Schibsted sin plattform (Pulse, innlogging og betaling)
+
+### Fjernet
+- `dn.no` (DN Media), `ba.no` (Amedia) og `hbl.fi` (KSF Media/Bonnier). Ingen av dem eies av Schibsted
 
 ### Endret
 - Firefox-versjonen ber om tillatelsen `webRequest` (kun for telleren). Chromium-versjonen er uendret

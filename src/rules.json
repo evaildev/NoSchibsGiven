@@ -438,7 +438,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.ba.no",
+      "urlFilter": "cmp.e24.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -456,7 +456,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.e24.no",
+      "urlFilter": "cmp.aftenposten.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -474,7 +474,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.aftenposten.no",
+      "urlFilter": "cmp.ap.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -492,7 +492,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.ap.no",
+      "urlFilter": "cmp.aftonbladet.se",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -510,7 +510,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.aftonbladet.se",
+      "urlFilter": "cmp.omni.se",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -528,7 +528,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.omni.se",
+      "urlFilter": "cmp.godt.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -546,7 +546,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.hbl.fi",
+      "urlFilter": "cmp.side2.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -564,7 +564,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.dn.no",
+      "urlFilter": "cmp.vgd.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -582,7 +582,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.godt.no",
+      "urlFilter": "cmp.svd.se",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -600,7 +600,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.side2.no",
+      "urlFilter": "cmp.aftenbladet.no",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -618,60 +618,6 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.vgd.no",
-      "resourceTypes": [
-        "script",
-        "sub_frame",
-        "xmlhttprequest",
-        "ping",
-        "image",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 36,
-    "priority": 1,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "cmp.svd.se",
-      "resourceTypes": [
-        "script",
-        "sub_frame",
-        "xmlhttprequest",
-        "ping",
-        "image",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 37,
-    "priority": 1,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
-      "urlFilter": "cmp.aftenbladet.no",
-      "resourceTypes": [
-        "script",
-        "sub_frame",
-        "xmlhttprequest",
-        "ping",
-        "image",
-        "other"
-      ]
-    }
-  },
-  {
-    "id": 38,
-    "priority": 1,
-    "action": {
-      "type": "block"
-    },
-    "condition": {
       "urlFilter": "cmp.fvn.no",
       "resourceTypes": [
         "script",
@@ -684,7 +630,7 @@
     }
   },
   {
-    "id": 39,
+    "id": 36,
     "priority": 1,
     "action": {
       "type": "block"
@@ -705,13 +651,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -722,13 +665,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
@@ -739,7 +679,7 @@
     }
   },
   {
-    "id": 40,
+    "id": 37,
     "priority": 1,
     "action": {
       "type": "block"
@@ -760,13 +700,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -777,13 +714,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
@@ -794,7 +728,7 @@
     }
   },
   {
-    "id": 41,
+    "id": 38,
     "priority": 1,
     "action": {
       "type": "block"
@@ -815,13 +749,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -832,13 +763,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
@@ -849,7 +777,7 @@
     }
   },
   {
-    "id": 42,
+    "id": 39,
     "priority": 1,
     "action": {
       "type": "block"
@@ -870,13 +798,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -887,13 +812,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
@@ -904,7 +826,7 @@
     }
   },
   {
-    "id": 43,
+    "id": 40,
     "priority": 1,
     "action": {
       "type": "block"
@@ -925,13 +847,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -942,13 +861,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
@@ -959,7 +875,7 @@
     }
   },
   {
-    "id": 44,
+    "id": 41,
     "priority": 1,
     "action": {
       "type": "block"
@@ -980,13 +896,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -997,13 +910,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
@@ -1014,7 +924,7 @@
     }
   },
   {
-    "id": 45,
+    "id": 42,
     "priority": 1,
     "action": {
       "type": "block"
@@ -1035,13 +945,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -1052,13 +959,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
@@ -1069,7 +973,7 @@
     }
   },
   {
-    "id": 46,
+    "id": 43,
     "priority": 1,
     "action": {
       "type": "block"
@@ -1090,13 +994,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -1107,13 +1008,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
@@ -1124,7 +1022,7 @@
     }
   },
   {
-    "id": 47,
+    "id": 44,
     "priority": 1,
     "action": {
       "type": "block"
@@ -1145,13 +1043,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -1162,13 +1057,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
@@ -1179,7 +1071,7 @@
     }
   },
   {
-    "id": 48,
+    "id": 45,
     "priority": 1,
     "action": {
       "type": "block"
@@ -1200,13 +1092,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -1217,13 +1106,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
@@ -1234,7 +1120,7 @@
     }
   },
   {
-    "id": 49,
+    "id": 46,
     "priority": 1,
     "action": {
       "type": "block"
@@ -1255,13 +1141,10 @@
         "aftonbladet.se",
         "ap.no",
         "assets.vg.no",
-        "ba.no",
         "bt.no",
-        "dn.no",
         "e24.no",
         "fvn.no",
         "godt.no",
-        "hbl.fi",
         "omni.se",
         "side2.no",
         "svd.se",
@@ -1272,13 +1155,10 @@
         "www.aftenposten.no",
         "www.aftonbladet.se",
         "www.ap.no",
-        "www.ba.no",
         "www.bt.no",
-        "www.dn.no",
         "www.e24.no",
         "www.fvn.no",
         "www.godt.no",
-        "www.hbl.fi",
         "www.omni.se",
         "www.side2.no",
         "www.svd.se",
