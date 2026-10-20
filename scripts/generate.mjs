@@ -203,8 +203,8 @@ function buildManifest(browser) {
       gecko: {
         // Kan ikke endres etter første opplasting til addons.mozilla.org.
         id: 'noschibsgiven@evaildev',
-        // world: "MAIN" i scripting.registerContentScripts krever Firefox 128+.
-        strict_min_version: '128.0',
+        // world: "MAIN" krever Firefox 128, data_collection_permissions 140.
+        strict_min_version: '140.0',
         // Vi samler ikke inn noe. Mozilla krever at det sies eksplisitt.
         data_collection_permissions: { required: ['none'] },
       },

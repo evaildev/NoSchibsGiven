@@ -4,6 +4,13 @@ Alle vesentlige endringer i dette prosjektet dokumenteres her.
 
 Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 
+## [3.0.2] - 2026-10-20
+
+### Endret
+- Nye ikoner med gjennomsiktig bakgrunn. Den hvite firkanten rundt ikonet synes ikke lenger i mørke verktøylinjer og i popupen
+- Firefox krever nå versjon 140 eller nyere (`strict_min_version`), som støtter `data_collection_permissions`. Fjerner advarselen fra Mozillas validering
+- Oppdatert banner og butikkbilder
+
 ## [3.0.1] - 2026-10-16
 
 ### Fikset
