@@ -8,6 +8,7 @@
 
 <p align="center">
   <a href="../../releases"><img src="https://img.shields.io/github/v/release/evaildev/NoSchibsGiven?style=flat-square&color=e63946&label=Last versjon" alt="Release"/></a>
+  <a href="https://addons.mozilla.org/firefox/addon/noschibsgiven/"><img src="https://img.shields.io/amo/v/noschibsgiven?style=flat-square&color=ff7139&label=Firefox&logo=firefoxbrowser&logoColor=white" alt="Firefox Add-ons"/></a>
   <img src="https://img.shields.io/badge/Manifest-V3-blue?style=flat-square" alt="MV3"/>
   <img src="https://img.shields.io/badge/Lisens-MIT-green?style=flat-square" alt="MIT"/>
 </p>
@@ -38,12 +39,14 @@ Schibsted krever opptil 49 kr/md for å avvise annonsesporing. Datatilsynet og F
 
 ## 📥 Nedlasting
 
-Gå til **[Releases](../../releases)** og last ned riktig fil for din nettleser:
+**Firefox:** installer fra **[Firefox Add-ons](https://addons.mozilla.org/firefox/addon/noschibsgiven/)**. Ett klikk, og den oppdateres automatisk.
+
+Andre nettlesere: gå til **[Releases](../../releases)** og last ned riktig fil:
 
 | Nettleser | Fil |
 |-----------|-----|
 | Chrome, Edge, Opera, Brave, Vivaldi | `noschibsgiven-chromium-vX.X.zip` |
-| Firefox | `noschibsgiven-firefox-vX.X.zip` |
+| Firefox | [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/noschibsgiven/) (eller `noschibsgiven-firefox-vX.X.zip`) |
 | Safari | [Se nedenfor ↓](#-safari) |
 
 ---
@@ -71,14 +74,22 @@ Alle disse bygger på Chromium, så fremgangsmåten er den samme:
 
 ### Firefox
 
+Installer fra **[Firefox Add-ons](https://addons.mozilla.org/firefox/addon/noschibsgiven/)** og klikk **Legg til i Firefox**. Ferdig ✅
+
+Utvidelsen blir værende når du lukker nettleseren, og nye versjoner kommer automatisk.
+
+<details>
+<summary>Manuell installasjon (for testing)</summary>
+
 1. Last ned og pakk ut `noschibsgiven-firefox-vX.X.zip`
 2. Åpne Firefox og gå til `about:debugging`
 3. Klikk **This Firefox** i menyen til venstre
 4. Klikk **Load Temporary Add-on...**
 5. Gå inn i mappen du pakket ut og velg filen `manifest.json`
-6. Ferdig ✅
 
-> ⚠️ **Merk:** Midlertidig installasjon forsvinner når Firefox lukkes. For permanent installasjon uten signering, bruk [Firefox Developer Edition](https://www.mozilla.org/firefox/developer/) og sett `xpinstall.signatures.required` til `false` i `about:config`.
+Midlertidig installasjon forsvinner når Firefox lukkes.
+
+</details>
 
 ### 🍎 Safari
 
@@ -127,7 +138,6 @@ SourcePoint-blokkeringen fungerer på **alle** nettsider som bruker SourcePoint 
 ### Kjente begrensninger
 
 - **Schibsted Plus / betaling:** Domener som `session-service.payment.schibsted.no` blokkeres fordi de brukes til sporing. Dette kan i noen tilfeller påvirke innloggings- eller betalingsflyt. Bruk **Pause på denne siden** i popupen hvis det skjer, og rapporter gjerne problemet.
-- **Firefox:** Midlertidig installasjon krever manuell lasting ved hver oppstart (se installasjonssteg over).
 
 Fant du et nytt tracking-domene? Bruk [issue-malen for nye domener](../../issues/new?template=nytt-domene.md) eller åpne en vanlig [Issue](../../issues).
 
