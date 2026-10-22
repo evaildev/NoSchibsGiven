@@ -30,7 +30,7 @@ Schibsted vil ha opptil 49 kr i måneden for at du skal få takke nei til person
 Hva den gjør:
 • Blokkerer samtykke-popupen (SourcePoint og Schibsted sin egen) før den lastes
 • Blokkerer Schibsted sin sporing og måling (Pulse, Kantar m.fl.) og tredjeparts annonse-SDK-er på Schibsted-sider
-• Svarer «ingen samtykke» til videospillere, så VGTV og andre spillere ikke henger
+• Svarer «ingen samtykke» til videospillere, så de ikke henger
 • Rydder bort rester av samtykke-popupen hvis noe slipper gjennom
 
 I popupen:
@@ -39,7 +39,7 @@ I popupen:
 • Klag til Datatilsynet: kopierer en ferdig klagetekst og åpner klagesiden
 • Meld nytt domene: fant du sporing vi ikke blokkerer? Si fra på GitHub
 
-Virker på blant annet VG, Aftenposten, Bergens Tidende, Stavanger Aftenblad, Fædrelandsvennen, E24, Tek, Godt, Aftonbladet, Svenska Dagbladet og Omni.
+Virker på Schibsted sine nettaviser i Norge og Sverige. Hele listen over sider står på GitHub.
 
 Utvidelsen samler ikke inn noe om deg, og sender ingenting noe sted. All kode er åpen på GitHub.
 
