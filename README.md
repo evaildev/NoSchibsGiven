@@ -9,6 +9,7 @@
 <p align="center">
   <a href="../../releases"><img src="https://img.shields.io/github/v/release/evaildev/NoSchibsGiven?style=flat-square&color=e63946&label=Last versjon" alt="Release"/></a>
   <a href="https://addons.mozilla.org/firefox/addon/noschibsgiven/"><img src="https://img.shields.io/amo/v/noschibsgiven?style=flat-square&color=ff7139&label=Firefox&logo=firefoxbrowser&logoColor=white" alt="Firefox Add-ons"/></a>
+  <a href="https://chromewebstore.google.com/detail/noschibsgiven/hbmjehecabpgcgehhafdgiaaobmfikoh"><img src="https://img.shields.io/chrome-web-store/v/hbmjehecabpgcgehhafdgiaaobmfikoh?style=flat-square&color=4285f4&label=Chrome&logo=googlechrome&logoColor=white" alt="Chrome Web Store"/></a>
   <img src="https://img.shields.io/badge/Manifest-V3-blue?style=flat-square" alt="MV3"/>
   <img src="https://img.shields.io/badge/Lisens-MIT-green?style=flat-square" alt="MIT"/>
 </p>
@@ -39,13 +40,16 @@ Schibsted krever opptil 49 kr/md for å avvise annonsesporing. Datatilsynet og F
 
 ## 📥 Nedlasting
 
-**Firefox:** installer fra **[Firefox Add-ons](https://addons.mozilla.org/firefox/addon/noschibsgiven/)**. Ett klikk, og den oppdateres automatisk.
+**Chrome, Edge, Brave, Vivaldi og Opera:** installer fra **[Chrome Web Store](https://chromewebstore.google.com/detail/noschibsgiven/hbmjehecabpgcgehhafdgiaaobmfikoh)**.  
+**Firefox:** installer fra **[Firefox Add-ons](https://addons.mozilla.org/firefox/addon/noschibsgiven/)**.
 
-Andre nettlesere: gå til **[Releases](../../releases)** og last ned riktig fil:
+Ett klikk, og den oppdateres automatisk.
+
+Vil du heller installere manuelt? Gå til **[Releases](../../releases)** og last ned riktig fil:
 
 | Nettleser | Fil |
 |-----------|-----|
-| Chrome, Edge, Opera, Brave, Vivaldi | `noschibsgiven-chromium-vX.X.zip` |
+| Chrome, Edge, Opera, Brave, Vivaldi | [Chrome Web Store](https://chromewebstore.google.com/detail/noschibsgiven/hbmjehecabpgcgehhafdgiaaobmfikoh) (eller `noschibsgiven-chromium-vX.X.zip`) |
 | Firefox | [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/noschibsgiven/) (eller `noschibsgiven-firefox-vX.X.zip`) |
 | Safari | [Se nedenfor ↓](#-safari) |
 
@@ -55,7 +59,18 @@ Andre nettlesere: gå til **[Releases](../../releases)** og last ned riktig fil:
 
 ### Chrome, Edge, Opera, Brave og Vivaldi
 
-Alle disse bygger på Chromium, så fremgangsmåten er den samme:
+Installer fra **[Chrome Web Store](https://chromewebstore.google.com/detail/noschibsgiven/hbmjehecabpgcgehhafdgiaaobmfikoh)** og klikk **Legg til i Chrome**. Ferdig ✅
+
+- **Edge:** klikk **Tillat utvidelser fra andre butikker** når Edge spør, og deretter **Legg til i Chrome**.
+- **Opera:** installer først Operas eget tillegg [Install Chrome Extensions](https://addons.opera.com/extensions/details/install-chrome-extensions/).
+- **Brave og Vivaldi:** fungerer rett fra Chrome Web Store.
+
+Utvidelsen oppdateres automatisk når nye versjoner kommer.
+
+<details>
+<summary>Manuell installasjon (ZIP)</summary>
+
+Alle disse nettleserne bygger på Chromium, så fremgangsmåten er den samme:
 
 1. Last ned `noschibsgiven-chromium-vX.X.zip` og pakk den ut (høyreklikk → *Pakk ut alle*)
 2. Gå til utvidelsessiden i nettleseren din:
@@ -71,6 +86,8 @@ Alle disse bygger på Chromium, så fremgangsmåten er den samme:
 3. Skru på **Utviklermodus** (øverst til høyre, i Edge nederst til venstre)
 4. Klikk **Last inn upakket** og velg mappen du pakket ut
 5. Ferdig ✅
+
+</details>
 
 ### Firefox
 
