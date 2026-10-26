@@ -77,7 +77,7 @@ Utvidelsen er laget av en privatperson og har ingen tilknytning til Schibsted.
 ```
 Source: https://github.com/evaildev/NoSchibsGiven
 
-content.js, rules.json, sites.js and manifest.json are generated from src/config.json by scripts/generate.mjs (plain Node, no dependencies). To rebuild: npm run build (Node 18+). Output is identical to the uploaded ZIP.
+content.js, rules.json, sites.js and manifest.json are generated from src/config.json by scripts/generate.mjs (plain Node, no dependencies). To rebuild: npm run build (Node 20.15+ or 22.2+). Output is identical to the uploaded ZIP.
 
 webRequest is only used to count requests blocked by declarativeNetRequest (onErrorOccurred with NS_ERROR_ABORT), because Firefox does not support declarativeNetRequest.getMatchedRules. It never blocks, reads bodies or modifies requests.
 

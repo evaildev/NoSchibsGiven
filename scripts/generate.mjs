@@ -241,6 +241,8 @@ writeFileSync(
         'Blokkerer Schibsted/SourcePoint samtykke-popups og client-side sporing på Schibsted Media-sider',
       private: true,
       type: 'module',
+      // crc32 fra node:zlib (brukt av build.mjs) kom i Node 20.15.0 og 22.2.0.
+      engines: { node: '^20.15.0 || >=22.2.0' },
       scripts: {
         generate: 'node scripts/generate.mjs',
         validate: 'node scripts/validate.mjs',
