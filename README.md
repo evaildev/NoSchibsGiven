@@ -162,7 +162,7 @@ Fant du et nytt tracking-domene? Bruk [issue-malen for nye domener](../../issues
 
 ## 🛠️ Utvikling
 
-Krever [Node.js](https://nodejs.org/) 18+.
+Krever [Node.js](https://nodejs.org/) 20.15+ eller 22.2+ (byggskriptet bruker `crc32` fra `node:zlib`).
 
 ```bash
 # Generer rules.json og manifest fra src/config.json
