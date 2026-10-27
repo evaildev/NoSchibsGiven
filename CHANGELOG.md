@@ -4,6 +4,12 @@ Alle vesentlige endringer i dette prosjektet dokumenteres her.
 
 Formatet er basert på [Keep a Changelog](https://keepachangelog.com/nb/1.1.0/).
 
+## [Unreleased]
+
+### Fikset
+- Pause per side kunne i sjeldne tilfeller skjule samtykkepopupen likevel. Content-scriptet slettet popup-elementer før svaret om pause kom fra bakgrunnsscriptet, og slettede elementer kom ikke tilbake. Til svaret kommer, skjules popupen nå bare med CSS, og elementene slettes først når siden ikke er pauset
+- Bygget krever Node 20.15+ eller 22.2+ (`crc32` fra `node:zlib`), ikke Node 18+ som README og butikkteksten sa
+
 ## [3.0.2] - 2026-10-20
 
 ### Endret

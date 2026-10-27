@@ -21,7 +21,9 @@
 
   // Pause per side styres fra popupen. Bakgrunnsscriptet vet hvilken side
   // fanen viser, også når vi kjører i en iframe (f.eks. SourcePoint sin).
-  // Til svaret kommer er vi aktive — popupen rekker ikke å vises før det.
+  // Til svaret kommer skjuler vi bare med CSS, som kan fjernes igjen. Elementer
+  // slettes først når vi vet at siden ikke er pauset — ellers ville en popup
+  // som rakk å dukke opp, vært borte selv om brukeren hadde pauset siden.
   let paused = false;
   const api = globalThis.browser ?? globalThis.chrome;
   const mayBePaused = onSchibsted || /privacy-mgmt\.com|sourcepoint\.com/.test(hostname);
@@ -107,14 +109,14 @@
   }
 
   function shouldRemove(node) {
-    if (paused) return false;
+    if (paused || !pauseKnown) return false;
     if (isSourcePointNode(node)) return true;
     if (onSchibsted && isSchibstedCmpNode(node)) return true;
     return false;
   }
 
   function cleanDOM() {
-    if (paused) return;
+    if (paused || !pauseKnown) return;
     const selectors = onSchibsted
       ? [
           '[id^="sp_message_container"]',
@@ -181,6 +183,8 @@
           style.remove();
           observer.disconnect();
         } else {
+          // Rydd opp det CSS-en har skjult mens vi ventet.
+          cleanDOM();
           neutralizeSourcePointStorage();
         }
       });
