@@ -6,7 +6,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cdn.privacy-mgmt.com",
+      "urlFilter": "||cdn.privacy-mgmt.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -24,7 +24,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "sourcepoint.com",
+      "urlFilter": "||sourcepoint.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -42,7 +42,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "privacy-mgmt.com",
+      "urlFilter": "||privacy-mgmt.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -60,7 +60,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "sdk.pulse.schibsted.com",
+      "urlFilter": "||sdk.pulse.schibsted.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -78,7 +78,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "static.privacy.schibsted.com",
+      "urlFilter": "||static.privacy.schibsted.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -96,7 +96,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "ads.inventory.schibsted.io",
+      "urlFilter": "||ads.inventory.schibsted.io^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -114,7 +114,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "pulse.schibsted.media",
+      "urlFilter": "||pulse.schibsted.media^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -132,7 +132,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cognifront.mvt.forbruker.schibsted.no",
+      "urlFilter": "||cognifront.mvt.forbruker.schibsted.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -150,7 +150,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "session-service.payment.schibsted.no",
+      "urlFilter": "||session-service.payment.schibsted.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -168,7 +168,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "ads.inventory.schibsted.no",
+      "urlFilter": "||ads.inventory.schibsted.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -186,7 +186,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "esv.schibsted.com",
+      "urlFilter": "||esv.schibsted.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -204,7 +204,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "tag.medialab.no",
+      "urlFilter": "||tag.medialab.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -222,7 +222,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "log.insider.no",
+      "urlFilter": "||log.insider.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -240,7 +240,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "session-admin.payment.schibsted.no",
+      "urlFilter": "||session-admin.payment.schibsted.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -258,7 +258,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "vend.schibsted.ai",
+      "urlFilter": "||vend.schibsted.ai^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -276,7 +276,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "sentry.vgnett.no",
+      "urlFilter": "||sentry.vgnett.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -294,7 +294,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "dc.schibsted.io",
+      "urlFilter": "||dc.schibsted.io^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -312,7 +312,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "ncis.schibsted.com",
+      "urlFilter": "||ncis.schibsted.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -330,7 +330,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cis.schibsted.com",
+      "urlFilter": "||cis.schibsted.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -348,7 +348,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "collector.schibsted.io",
+      "urlFilter": "||collector.schibsted.io^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -366,7 +366,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "sdkconfig.pulse.schibsted.io",
+      "urlFilter": "||sdkconfig.pulse.schibsted.io^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -384,7 +384,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.tek.no",
+      "urlFilter": "||cmp.tek.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -402,7 +402,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.vg.no",
+      "urlFilter": "||cmp.vg.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -420,7 +420,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.bt.no",
+      "urlFilter": "||cmp.bt.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -438,7 +438,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.e24.no",
+      "urlFilter": "||cmp.e24.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -456,7 +456,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.aftenposten.no",
+      "urlFilter": "||cmp.aftenposten.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -474,7 +474,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.ap.no",
+      "urlFilter": "||cmp.ap.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -492,7 +492,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.aftonbladet.se",
+      "urlFilter": "||cmp.aftonbladet.se^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -510,7 +510,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.omni.se",
+      "urlFilter": "||cmp.omni.se^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -528,7 +528,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.godt.no",
+      "urlFilter": "||cmp.godt.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -546,7 +546,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.side2.no",
+      "urlFilter": "||cmp.side2.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -564,7 +564,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.vgd.no",
+      "urlFilter": "||cmp.vgd.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -582,7 +582,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.svd.se",
+      "urlFilter": "||cmp.svd.se^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -600,7 +600,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.aftenbladet.no",
+      "urlFilter": "||cmp.aftenbladet.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -618,7 +618,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "cmp.fvn.no",
+      "urlFilter": "||cmp.fvn.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -636,7 +636,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "datadoghq-browser-agent.com",
+      "urlFilter": "||datadoghq-browser-agent.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -685,7 +685,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "adsdkprod.azureedge.net",
+      "urlFilter": "||adsdkprod.azureedge.net^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -734,7 +734,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "confirmit.com",
+      "urlFilter": "||confirmit.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -783,7 +783,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "log.medietall.no",
+      "urlFilter": "||log.medietall.no^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -832,7 +832,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "ads.skm.microsoft.com",
+      "urlFilter": "||ads.skm.microsoft.com^",
       "resourceTypes": [
         "script",
         "sub_frame",
@@ -881,7 +881,7 @@
       "type": "block"
     },
     "condition": {
-      "urlFilter": "fbevents-a.akamaihd.net",
+      "urlFilter": "||fbevents-a.akamaihd.net^",
       "resourceTypes": [
         "script",
         "sub_frame",

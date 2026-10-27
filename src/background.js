@@ -112,12 +112,17 @@ function loadRules() {
   rulesPromise ??= fetch(api.runtime.getURL('rules.json'))
     .then((res) => res.json())
     .then((rules) =>
-      rules.map((rule) => ({
-        filter: rule.condition.urlFilter,
-        needle: rule.condition.urlFilter.toLowerCase(),
-        initiators: rule.condition.initiatorDomains ?? null,
-        types: rule.condition.resourceTypes,
-      }))
+      rules.map((rule) => {
+        const filter = rule.condition.urlFilter;
+        const host = filter.match(/^\|\|(.+)\^$/)?.[1] ?? null;
+        return {
+          filter: host ?? filter,
+          host: host?.toLowerCase() ?? null,
+          needle: filter.toLowerCase(),
+          initiators: rule.condition.initiatorDomains ?? null,
+          types: rule.condition.resourceTypes,
+        };
+      })
     );
   return rulesPromise;
 }
@@ -127,10 +132,17 @@ const hostIn = (host, domains) => domains.some((d) => host === d || host.endsWit
 // webRequest-typer som DNR kjenner under et annet navn.
 const DNR_TYPE = { beacon: 'ping', imageset: 'image' };
 
-// Samme logikk som DNR: urlFilter uten ankere er en delstreng av URL-en
-// (uavhengig av store/små bokstaver), og initiatorDomains gjelder dokumentet.
+// Samme logikk som DNR: ||vert^ treffer verten og dens subdomener, urlFilter
+// uten ankere er en delstreng av URL-en (uavhengig av store/små bokstaver),
+// og initiatorDomains gjelder dokumentet.
 function matchRule(rules, details) {
   const url = details.url.toLowerCase();
+  let host = '';
+  try {
+    host = new URL(details.url).hostname;
+  } catch {
+    // ugyldig URL
+  }
   const type = DNR_TYPE[details.type] ?? details.type;
   let initiator = '';
   try {
@@ -140,7 +152,7 @@ function matchRule(rules, details) {
   }
   return rules.find(
     (rule) =>
-      url.includes(rule.needle) &&
+      (rule.host ? hostIn(host, [rule.host]) : url.includes(rule.needle)) &&
       rule.types.includes(type) &&
       (!rule.initiators || hostIn(initiator, rule.initiators))
   );

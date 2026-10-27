@@ -63,7 +63,10 @@ async function blockedFilters(tab) {
       api.declarativeNetRequest.getMatchedRules({ tabId: tab.id }),
       fetch(api.runtime.getURL('rules.json')).then((res) => res.json()),
     ]);
-    const filterById = new Map(rules.map((rule) => [rule.id, rule.condition.urlFilter]));
+    // ||vert^ vises som bare vertsnavnet, som i Firefox-telleren.
+    const filterById = new Map(
+      rules.map((rule) => [rule.id, rule.condition.urlFilter.replace(/^\|\|(.+)\^$/, '$1')])
+    );
     const filters = new Map();
     for (const info of matched.rulesMatchedInfo) {
       if (info.rule.rulesetId !== 'ruleset_1') continue;

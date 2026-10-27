@@ -21,6 +21,12 @@ const schibstedDomains = [
 
 const cmpHosts = config.schibstedRoots.map((root) => `cmp.${root}`);
 
+// Et vertsnavn som urlFilter uten ankere er en delstreng av hele URL-en, og
+// treffer derfor også f.eks. https://example.com/?ref=sourcepoint.com og
+// notsourcepoint.com. ||vert^ treffer bare verten selv og dens subdomener.
+const HOSTNAME_RE = /^[a-z0-9]([a-z0-9-]*\.)+[a-z]{2,}$/i;
+const anchored = (filter) => (HOSTNAME_RE.test(filter) ? `||${filter}^` : filter);
+
 function buildInitiatorDomains() {
   return [...new Set(schibstedDomains)].sort();
 }
@@ -37,7 +43,7 @@ function buildRules() {
       priority: 1,
       action: { type: 'block' },
       condition: {
-        urlFilter,
+        urlFilter: anchored(urlFilter),
         resourceTypes,
         ...extra,
       },
@@ -67,8 +73,7 @@ function urlFilterToHostPermissions(filter) {
   }
 
   // Kun ekte vertsnavn — ikke tilfeldige URL-strenger med punktum i seg.
-  const hostnameRe = /^[a-z0-9]([a-z0-9-]*\.)+[a-z]{2,}$/i;
-  if (!hostnameRe.test(filter)) {
+  if (!HOSTNAME_RE.test(filter)) {
     return [];
   }
 
